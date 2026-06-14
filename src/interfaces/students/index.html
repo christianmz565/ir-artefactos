@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>IGU-1 — Students Management</title>
+		<script type="module">
+			import "wired-elements/lib/wired-input.js";
+			import "wired-elements/lib/wired-button.js";
+			import "wired-elements/lib/wired-combo.js";
+			import "wired-elements/lib/wired-item.js";
+			import "wired-elements/lib/wired-card.js";
+		</script>
+		<script type="module" src="/src/lib/index.ts"></script>
+		<script type="module" src="/src/components/admin-panel.ts"></script>
+		<script type="module" src="/src/interfaces/students/students.ts"></script>
+		<script type="module">
+			import { registry } from "/src/lib/component-registry.ts";
+
+			registry.setInterface("IGU-1");
+			registry.initialize();
+		</script>
+		<style>
+			body {
+				margin: 0;
+				padding: 0;
+				background: #fafafa;
+			}
+		</style>
+	</head>
+	<body>
+		<students-interface></students-interface>
+		<component-viewer></component-viewer>
+		<admin-panel></admin-panel>
+	</body>
+</html>

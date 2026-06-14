@@ -4,6 +4,7 @@ export interface ComponentEntry {
 	path: string[];
 	label?: string;
 	parentId?: string;
+	interfaceId: string;
 }
 
 export interface ViewerConfig {

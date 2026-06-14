@@ -30,7 +30,7 @@ export class AdminPanel extends LitElement {
 			e.preventDefault();
 			this.open = !this.open;
 			if (this.open) {
-				this.components = registry.getAll();
+				this.components = registry.getCurrentPageComponents();
 			}
 		}
 	};
@@ -51,28 +51,45 @@ export class AdminPanel extends LitElement {
 	render() {
 		if (!this.open) return html``;
 
+		const interfaceId = registry.getInterfaceId();
+
 		return html`
 			<div class="panel">
 				<div class="header">
-					<span class="title">Tagged Components (${this.components.length})</span>
-					<button class="close" @click=${() => (this.open = false)}>&times;</button>
+					<span class="title">
+						${interfaceId ? `${interfaceId} — ` : ""}Components
+						(${this.components.length})
+					</span>
+					<button class="close" @click=${() => (this.open = false)}>
+						&times;
+					</button>
 				</div>
 				<div class="list">
 					${
 						this.components.length === 0
-							? html`<div class="empty">No components registered. Add data-component-id attributes to your elements.</div>`
+							? html`<div class="empty">
+								No components registered in this interface.
+							</div>`
 							: this.components.map(
 									(c) => html`
 									<div class="item">
 										<div class="info">
 											<span class="id">${c.id}</span>
-											${c.label ? html`<span class="label">${c.label}</span>` : ""}
+											${
+												c.label
+													? html`<span class="label"
+														>${c.label}</span
+													>`
+													: ""
+											}
 										</div>
 										<div class="actions">
 											<button @click=${() => this._copyUrl(c.id)}>
 												${this.copiedId === c.id ? "Copied!" : "Copy URL"}
 											</button>
-											<button @click=${() => this._openTab(c.id)}>Open</button>
+											<button @click=${() => this._openTab(c.id)}>
+												Open
+											</button>
 										</div>
 									</div>
 								`,
@@ -162,6 +179,8 @@ export class AdminPanel extends LitElement {
 		.id {
 			font-weight: 500;
 			color: #111827;
+			font-family: ui-monospace, monospace;
+			font-size: 13px;
 		}
 
 		.label {

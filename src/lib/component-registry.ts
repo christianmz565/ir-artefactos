@@ -3,6 +3,15 @@ import type { ComponentEntry } from "./types.js";
 class ComponentRegistry {
 	private components = new Map<string, ComponentEntry>();
 	private initialized = false;
+	private currentInterfaceId = "";
+
+	setInterface(interfaceId: string): void {
+		this.currentInterfaceId = interfaceId;
+	}
+
+	getInterfaceId(): string {
+		return this.currentInterfaceId;
+	}
 
 	initialize(): void {
 		if (this.initialized) return;
@@ -22,6 +31,7 @@ class ComponentRegistry {
 				path,
 				label,
 				parentId,
+				interfaceId: this.currentInterfaceId,
 			});
 		}
 	}
@@ -56,6 +66,15 @@ class ComponentRegistry {
 		return Array.from(this.components.values());
 	}
 
+	getByInterface(interfaceId: string): ComponentEntry[] {
+		return this.getAll().filter((c) => c.interfaceId === interfaceId);
+	}
+
+	getCurrentPageComponents(): ComponentEntry[] {
+		if (!this.currentInterfaceId) return this.getAll();
+		return this.getByInterface(this.currentInterfaceId);
+	}
+
 	unregister(id: string): void {
 		this.components.delete(id);
 	}
@@ -63,6 +82,7 @@ class ComponentRegistry {
 	clear(): void {
 		this.components.clear();
 		this.initialized = false;
+		this.currentInterfaceId = "";
 	}
 
 	private resolveParentPath(parentId: string): string[] {

@@ -21,6 +21,7 @@ export function tagComponent<T extends Constructor<LitElement>>(Base: T) {
 				path: parentId ? [parentId, id] : [id],
 				label,
 				parentId,
+				interfaceId: registry.getInterfaceId(),
 			});
 		}
 
