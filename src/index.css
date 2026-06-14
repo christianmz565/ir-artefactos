@@ -66,21 +66,24 @@ body {
   margin: 0;
 }
 
-/* Override Sketchy theme table borders with standard borders */
-.table,
-.table-bordered,
+/* Keep Sketchy hand-drawn look but fix border connectivity */
+.table-bordered {
+  border-collapse: collapse !important;
+  background-color: transparent !important;
+  border: 2px solid #333 !important;
+}
+
 .table-bordered > :is(thead, tbody, tfoot) > tr > :is(th, td) {
-  border-color: var(--bs-border-color) !important;
+  border: 1px solid #333 !important;
   border-image: none !important;
 }
 
-.table-bordered > :is(thead, tbody, tfoot) > tr > :is(th, td) {
-  border-width: 1px !important;
+.table-bordered > :is(thead, tbody, tfoot) > tr > :is(th, td):first-child {
+  border-left: none !important;
 }
 
-.table-bordered > :is(thead, tbody, tfoot) > tr > :is(th, td):before,
-.table-bordered > :is(thead, tbody, tfoot) > tr > :is(th, td):after {
-  display: none !important;
+.table-bordered > thead > tr:first-child > :is(th, td) {
+  border-top: none !important;
 }
 
 h1,
