@@ -1,73 +1,50 @@
-# React + TypeScript + Vite
+# IR Artefactos
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Librería de artefactos UI desarrollada con **React + TypeScript + Vite** y documentada con **Storybook**.
 
-Currently, two official plugins are available:
+El catálogo de componentes se desarrolla y revisa enteramente desde Storybook — no hay aplicación frontend propia.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Stack
 
-## React Compiler
+- **React 19** + **TypeScript**
+- **Vite 8** (alias `@/*` → `src/*`)
+- **Storybook 10** con addons de a11y y docs
+- **Bootstrap 5** + **Bootswatch Sketchy** + **react-bootstrap** (tema de caricatura)
+- **Biome 2** para lint + format
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Scripts
 
-## Expanding the ESLint configuration
+| Comando | Descripción |
+| --- | --- |
+| `bun run storybook` | Inicia Storybook en `http://localhost:6006` |
+| `bun run build` | Typecheck + build de Storybook estático |
+| `bun run build-storybook` | Solo build de Storybook |
+| `bun run lint` | Aplica fixes de Biome |
+| `bun run lint:check` | Solo reporta, no escribe |
+| `bun run typecheck` | `tsc -b` |
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Estructura
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```
+src/
+└── components/         # Componentes + sus *.stories.tsx co-localizados
+public/
+└── icons.svg           # Sprite de iconos
+.storybook/
+├── main.ts
+└── preview.tsx         # CSS global, sort de stories, parámetros a11y
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Convenciones
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- **Alias de imports**: usar `@/components/...` en vez de rutas relativas
+- **Stories co-localizadas**: `Button.tsx` vive junto a `Button.stories.tsx`
+- **a11y**: el addon a11y corre contra cada story en modo `todo` (no rompe CI)
+- **Lint**: `biome check` aplica formato, organiza imports y revisa reglas React
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Agregar un componente
+
+1. Crear carpeta en `src/components/<Nombre>/`
+2. Implementar `<Nombre>.tsx` con tipos y props exportadas
+3. Crear `<Nombre>.stories.tsx` con al menos una story `Default`
+4. Storybook lo recoge automáticamente por el glob `src/**/*.stories.@(ts|tsx)`
