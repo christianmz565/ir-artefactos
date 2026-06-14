@@ -1,0 +1,22 @@
+{
+	"name": "requirements",
+	"private": true,
+	"version": "0.0.0",
+	"type": "module",
+	"scripts": {
+		"dev": "vite",
+		"build": "tsc && vite build",
+		"preview": "vite preview",
+		"lint": "biome check .",
+		"lint:fix": "biome check --write .",
+		"format": "biome format --write ."
+	},
+	"dependencies": {
+		"lit": "^3.3.2"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "2.5.0",
+		"typescript": "~6.0.2",
+		"vite": "^8.0.12"
+	}
+}
