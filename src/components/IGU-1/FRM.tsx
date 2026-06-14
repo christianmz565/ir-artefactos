@@ -18,9 +18,9 @@ interface StudentFormProps {
 }
 
 const COURSE_OPTIONS = [
-  { value: "CS", label: "Computer Science" },
-  { value: "Math", label: "Mathematics" },
-  { value: "Physics", label: "Physics" },
+  { value: "CS", label: "Ciencias de la Computación" },
+  { value: "Math", label: "Matemáticas" },
+  { value: "Physics", label: "Física" },
 ];
 
 export function StudentForm({
@@ -41,24 +41,24 @@ export function StudentForm({
   return (
     <Card>
       <Card.Body>
-        <Card.Title>{isEdit ? "Edit Student" : "Add New Student"}</Card.Title>
+        <Card.Title>{isEdit ? "Editar Estudiante" : "Agregar Nuevo Estudiante"}</Card.Title>
         <form onSubmit={handleSubmit}>
           <Input
-            label="Name"
-            placeholder="Enter full name"
+            label="Nombre"
+            placeholder="Ingrese nombre completo"
             value={formData.name}
             onChange={(v) => setFormData({ ...formData, name: v })}
             id="student-name"
           />
           <Input
-            label="Email"
-            placeholder="Enter email address"
+            label="Correo electrónico"
+            placeholder="Ingrese dirección de correo"
             value={formData.email}
             onChange={(v) => setFormData({ ...formData, email: v })}
             id="student-email"
           />
           <Select
-            label="Course"
+            label="Curso"
             options={COURSE_OPTIONS}
             value={formData.course}
             onChange={(v) => setFormData({ ...formData, course: v })}
@@ -66,10 +66,10 @@ export function StudentForm({
           />
           <div className="d-flex gap-2 mt-3">
             <Button type="submit">
-              {isEdit ? "Update" : "Save"}
+              {isEdit ? "Actualizar" : "Guardar"}
             </Button>
             <Button variant="secondary" onClick={onCancel}>
-              Cancel
+              Cancelar
             </Button>
           </div>
         </form>

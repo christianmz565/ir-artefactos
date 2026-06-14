@@ -22,17 +22,17 @@ export function StudentTable({ students, onEdit, onDelete }: StudentTableProps) 
         <thead>
           <tr>
             <th>ID</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Course</th>
-            <th>Actions</th>
+            <th>Nombre</th>
+            <th>Correo electrónico</th>
+            <th>Curso</th>
+            <th>Acciones</th>
           </tr>
         </thead>
         <tbody>
           {students.length === 0 ? (
             <tr>
               <td colSpan={5} className="text-center text-muted py-4">
-                &#x2205; No students found
+                &#x2205; No se encontraron estudiantes
               </td>
             </tr>
           ) : (
@@ -45,14 +45,14 @@ export function StudentTable({ students, onEdit, onDelete }: StudentTableProps) 
                 <td>
                   <div className="d-flex gap-1">
                     <Button size="sm" onClick={() => onEdit(s)}>
-                      Edit
+                      Editar
                     </Button>
                     <Button
                       size="sm"
                       variant="danger"
                       onClick={() => onDelete(s.id)}
                     >
-                      Delete
+                      Eliminar
                     </Button>
                   </div>
                 </td>

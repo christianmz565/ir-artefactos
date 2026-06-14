@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { StudentTable } from "../TBL";
 
 const meta: Meta<typeof StudentTable> = {
-  title: "Requirements/IGU-1 Student Management/Elements/IGU-1-TBL-1 (Student Table)",
+  title: "Requisitos/Gestión de Estudiantes/Elementos/IGU-1-TBL-1 (Tabla Estudiantes)",
   component: StudentTable,
   tags: ["autodocs"],
 };
@@ -20,8 +20,8 @@ const SAMPLE_STUDENTS = [
 export const Docs: Story = {
   args: {
     students: SAMPLE_STUDENTS,
-    onEdit: (s) => console.log("Edit:", s),
-    onDelete: (id) => console.log("Delete:", id),
+    onEdit: (s) => console.log("Editar:", s),
+    onDelete: (id) => console.log("Eliminar:", id),
   },
 };
 
@@ -29,8 +29,8 @@ export const TableWithStudents: Story = {
   name: "IGU-1-TBL-1 (With Students)",
   args: {
     students: SAMPLE_STUDENTS,
-    onEdit: (s) => console.log("Edit:", s),
-    onDelete: (id) => console.log("Delete:", id),
+    onEdit: (s) => console.log("Editar:", s),
+    onDelete: (id) => console.log("Eliminar:", id),
   },
 };
 

@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Button } from "../../BTN";
 
 const meta: Meta<typeof Button> = {
-  title: "Requirements/IGU-1 Student Management/Elements/IGU-1-BTN-2 (Edit)",
+  title: "Requisitos/Gestión de Estudiantes/Elementos/IGU-1-BTN-2 (Editar)",
   component: Button,
   tags: ["autodocs"],
 };
@@ -13,7 +13,7 @@ type Story = StoryObj<typeof Button>;
 export const EditButton: Story = {
   name: "IGU-1-BTN-2 (Edit)",
   args: {
-    children: "Edit",
+    children: "Editar",
     variant: "secondary",
     size: "sm",
   },

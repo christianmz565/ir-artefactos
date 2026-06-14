@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { View } from "./IGU";
 
 const meta: Meta<typeof View> = {
-  title: "Requirements/IGU-1 Student Management/Screen",
+  title: "Requisitos/Gestión de Estudiantes/Pantalla",
   component: View,
   tags: ["autodocs"],
 };

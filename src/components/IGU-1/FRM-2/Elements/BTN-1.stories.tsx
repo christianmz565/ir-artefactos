@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Button } from "../../../BTN";
 
 const meta: Meta<typeof Button> = {
-  title: "Requirements/IGU-1 Student Management/IGU-1-FRM-2 Edit Form/Elements/IGU-1-FRM-2-BTN-1 (Update)",
+  title: "Requisitos/Gestión de Estudiantes/IGU-1-FRM-2 Formulario Editar/Elementos/IGU-1-FRM-2-BTN-1 (Actualizar)",
   component: Button,
   tags: ["autodocs"],
 };
@@ -12,7 +12,7 @@ type Story = StoryObj<typeof Button>;
 
 export const Docs: Story = {
   args: {
-    children: "Update",
+    children: "Actualizar",
     variant: "primary",
   },
 };
@@ -20,7 +20,7 @@ export const Docs: Story = {
 export const UpdateButton: Story = {
   name: "IGU-1-FRM-2-BTN-1 (Update)",
   args: {
-    children: "Update",
+    children: "Actualizar",
     variant: "primary",
   },
 };

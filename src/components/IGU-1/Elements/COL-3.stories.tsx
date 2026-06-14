@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Column } from "../../COL";
 
 const meta: Meta<typeof Column> = {
-  title: "Requirements/IGU-1 Student Management/Elements/IGU-1-COL-3 (Email Column)",
+  title: "Requisitos/Gestión de Estudiantes/Elementos/IGU-1-COL-3 (Columna Correo)",
   component: Column,
   tags: ["autodocs"],
 };
@@ -12,7 +12,7 @@ type Story = StoryObj<typeof Column>;
 
 export const Docs: Story = {
   args: {
-    header: "Email",
+    header: "Correo electrónico",
     items: ["alice@example.com", "bob@example.com", "carol@example.com", "david@example.com"],
   },
 };
@@ -20,7 +20,7 @@ export const Docs: Story = {
 export const ColumnDefault: Story = {
   name: "IGU-1-COL-3 (Email)",
   args: {
-    header: "Email",
+    header: "Correo electrónico",
     items: ["alice@example.com", "bob@example.com", "carol@example.com", "david@example.com"],
   },
 };

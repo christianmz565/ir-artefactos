@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Select } from "../../SEL";
 
 const meta: Meta<typeof Select> = {
-  title: "Requirements/IGU-1 Student Management/Elements/IGU-1-SEL-1 (Course Filter)",
+  title: "Requisitos/Gestión de Estudiantes/Elementos/IGU-1-SEL-1 (Filtro Curso)",
   component: Select,
   tags: ["autodocs"],
 };
@@ -11,10 +11,10 @@ export default meta;
 type Story = StoryObj<typeof Select>;
 
 const FILTER_OPTIONS = [
-  { value: "", label: "All Courses" },
-  { value: "CS", label: "Computer Science" },
-  { value: "Math", label: "Mathematics" },
-  { value: "Physics", label: "Physics" },
+  { value: "", label: "Todos los Cursos" },
+  { value: "CS", label: "Ciencias de la Computación" },
+  { value: "Math", label: "Matemáticas" },
+  { value: "Physics", label: "Física" },
 ];
 
 export const CourseFilter: Story = {

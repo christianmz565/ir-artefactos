@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Column } from "../../COL";
 
 const meta: Meta<typeof Column> = {
-  title: "Requirements/IGU-1 Student Management/Elements/IGU-1-COL-1 (ID Column)",
+  title: "Requisitos/Gestión de Estudiantes/Elementos/IGU-1-COL-1 (Columna ID)",
   component: Column,
   tags: ["autodocs"],
 };

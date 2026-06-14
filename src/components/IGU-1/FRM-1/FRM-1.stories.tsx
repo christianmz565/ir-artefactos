@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { StudentForm } from "../FRM";
 
 const meta: Meta<typeof StudentForm> = {
-  title: "Requirements/IGU-1 Student Management/IGU-1-FRM-1 Create Form/Form",
+  title: "Requisitos/Gestión de Estudiantes/IGU-1-FRM-1 Formulario Crear/Formulario",
   component: StudentForm,
   tags: ["autodocs"],
 };
@@ -13,16 +13,16 @@ type Story = StoryObj<typeof StudentForm>;
 export const Docs: Story = {
   args: {
     isEdit: false,
-    onSave: (data) => console.log("Save:", data),
-    onCancel: () => console.log("Cancel"),
+    onSave: (data) => console.log("Guardar:", data),
+    onCancel: () => console.log("Cancelar"),
   },
 };
 
 export const FormDefault: Story = {
-  name: "Form (Create)",
+  name: "Formulario (Crear)",
   args: {
     isEdit: false,
-    onSave: (data) => console.log("Save:", data),
-    onCancel: () => console.log("Cancel"),
+    onSave: (data) => console.log("Guardar:", data),
+    onCancel: () => console.log("Cancelar"),
   },
 };

@@ -3,10 +3,10 @@ import { Select } from "../SEL";
 import { Button } from "../BTN";
 
 const COURSE_OPTIONS = [
-  { value: "", label: "All Courses" },
-  { value: "CS", label: "Computer Science" },
-  { value: "Math", label: "Mathematics" },
-  { value: "Physics", label: "Physics" },
+  { value: "", label: "Todos los Cursos" },
+  { value: "CS", label: "Ciencias de la Computación" },
+  { value: "Math", label: "Matemáticas" },
+  { value: "Physics", label: "Física" },
 ];
 
 interface HeaderProps {
@@ -26,10 +26,10 @@ export function Header({
 }: HeaderProps) {
   return (
     <div className="d-flex align-items-center justify-content-between mb-4 flex-wrap gap-3">
-      <h1 className="mb-0">Students Management</h1>
+      <h1 className="mb-0">Gestión de Estudiantes</h1>
       <div className="d-flex gap-3 align-items-center">
         <Input
-          placeholder="Search by name..."
+          placeholder="Buscar por nombre..."
           value={searchQuery}
           onChange={onSearchChange}
           id="search-students"
@@ -40,7 +40,7 @@ export function Header({
           onChange={onFilterChange}
           id="filter-course"
         />
-        <Button onClick={onAddStudent}>+ Add Student</Button>
+        <Button onClick={onAddStudent}>+ Agregar Estudiante</Button>
       </div>
     </div>
   );
