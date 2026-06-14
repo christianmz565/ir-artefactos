@@ -1,9 +1,9 @@
 import { useState } from "react";
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { Header } from "./HDR";
+import { Header } from "../HDR";
 
 const meta: Meta<typeof Header> = {
-  title: "IGU-1/HDR",
+  title: "Requirements/IGU-1 Student Management/Elements/IGU-1-HDR (Header)",
   component: Header,
   tags: ["autodocs"],
 };
@@ -26,7 +26,7 @@ function HeaderWrapper() {
   );
 }
 
-export const IGU_1_HDR: Story = {
-  name: "IGU-1-HDR",
+export const HeaderElement: Story = {
+  name: "IGU-1-HDR (Header)",
   render: () => <HeaderWrapper />,
 };

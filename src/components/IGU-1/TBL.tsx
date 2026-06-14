@@ -29,28 +29,36 @@ export function StudentTable({ students, onEdit, onDelete }: StudentTableProps) 
           </tr>
         </thead>
         <tbody>
-          {students.map((s) => (
-            <tr key={s.id}>
-              <td>{s.id}</td>
-              <td>{s.name}</td>
-              <td>{s.email}</td>
-              <td>{s.course}</td>
-              <td>
-                <div className="d-flex gap-1">
-                  <Button size="sm" onClick={() => onEdit(s)}>
-                    Edit
-                  </Button>
-                  <Button
-                    size="sm"
-                    variant="danger"
-                    onClick={() => onDelete(s.id)}
-                  >
-                    Delete
-                  </Button>
-                </div>
+          {students.length === 0 ? (
+            <tr>
+              <td colSpan={5} className="text-center text-muted py-4">
+                &#x2205; No students found
               </td>
             </tr>
-          ))}
+          ) : (
+            students.map((s) => (
+              <tr key={s.id}>
+                <td>{s.id}</td>
+                <td>{s.name}</td>
+                <td>{s.email}</td>
+                <td>{s.course}</td>
+                <td>
+                  <div className="d-flex gap-1">
+                    <Button size="sm" onClick={() => onEdit(s)}>
+                      Edit
+                    </Button>
+                    <Button
+                      size="sm"
+                      variant="danger"
+                      onClick={() => onDelete(s.id)}
+                    >
+                      Delete
+                    </Button>
+                  </div>
+                </td>
+              </tr>
+            ))
+          )}
         </tbody>
       </Table>
     </Card>
