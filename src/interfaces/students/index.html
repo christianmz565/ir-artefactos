@@ -4,22 +4,14 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>IGU-1 — Students Management</title>
-		<script type="module">
-			import "wired-elements/lib/wired-input.js";
-			import "wired-elements/lib/wired-button.js";
-			import "wired-elements/lib/wired-combo.js";
-			import "wired-elements/lib/wired-item.js";
-			import "wired-elements/lib/wired-card.js";
-		</script>
-		<script type="module" src="/src/lib/index.ts"></script>
-		<script type="module" src="/src/components/admin-panel.ts"></script>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap"
+			rel="stylesheet"
+		/>
+		<script type="module" src="/src/lib/base-initialize.ts"></script>
 		<script type="module" src="/src/interfaces/students/students.ts"></script>
-		<script type="module">
-			import { registry } from "/src/lib/component-registry.ts";
-
-			registry.setInterface("IGU-1");
-			registry.initialize();
-		</script>
 		<style>
 			body {
 				margin: 0;

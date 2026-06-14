@@ -7,6 +7,7 @@ function getPublicUrl(): string {
 export function generateUrl(componentId: string): string {
 	const base = getPublicUrl();
 	const url = new URL(base);
+	url.pathname = window.location.pathname;
 	url.searchParams.set("component", componentId);
 	return url.toString();
 }

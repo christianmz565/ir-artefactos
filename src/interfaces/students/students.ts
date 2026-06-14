@@ -1,5 +1,6 @@
 import { css, html, LitElement } from "lit";
 import { customElement, state } from "lit/decorators.js";
+import { initInterface } from "../../lib/base-initialize.js";
 
 interface Student {
 	id: number;
@@ -10,6 +11,11 @@ interface Student {
 
 @customElement("students-interface")
 export class StudentsInterface extends LitElement {
+	connectedCallback(): void {
+		super.connectedCallback();
+		initInterface("IGU-1");
+	}
+
 	@state()
 	private students: Student[] = [
 		{ id: 1, name: "Alice Johnson", email: "alice@example.com", course: "CS" },
@@ -291,7 +297,8 @@ export class StudentsInterface extends LitElement {
 
 	static styles = css`
 		.igu {
-			font-family: system-ui, sans-serif;
+			font-family: 'Patrick Hand', cursive;
+			color: #111827;
 			padding: 32px;
 			max-width: 1100px;
 			margin: 0 auto;
@@ -343,7 +350,7 @@ export class StudentsInterface extends LitElement {
 
 		td {
 			padding: 12px 16px;
-			border-bottom: 1px solid #f3f4f6;
+			border-bottom: 1px solid #e5e7eb;
 			color: #374151;
 		}
 

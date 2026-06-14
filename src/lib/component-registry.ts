@@ -17,7 +17,7 @@ class ComponentRegistry {
 		if (this.initialized) return;
 		this.initialized = true;
 
-		const elements = document.body.querySelectorAll("[data-component-id]");
+		const elements = this.queryAllDeep("[data-component-id]", document.body);
 		for (const el of elements) {
 			const id = el.getAttribute("data-component-id");
 			if (!id) continue;
@@ -36,6 +36,19 @@ class ComponentRegistry {
 		}
 	}
 
+	private queryAllDeep(selector: string, root: ParentNode): Element[] {
+		const results: Element[] = [...root.querySelectorAll(selector)];
+		const all = root.querySelectorAll("*");
+		for (const el of all) {
+			const lightResults = el.querySelectorAll(selector);
+			results.push(...lightResults);
+			if (el.shadowRoot) {
+				results.push(...this.queryAllDeep(selector, el.shadowRoot));
+			}
+		}
+		return results;
+	}
+
 	register(entry: ComponentEntry): void {
 		if (this.components.has(entry.id)) {
 			console.warn(`Component "${entry.id}" is already registered.`);
@@ -49,17 +62,45 @@ class ComponentRegistry {
 	}
 
 	getByPath(path: string[]): HTMLElement | null {
+		if (this.components.size === 0) {
+			this.initialized = false;
+			this.initialize();
+		}
+
 		let current: ParentNode = document.body;
 
 		for (const segment of path) {
-			const el = current.querySelector(
+			const el = this.querySelectorDeep(
 				`[data-component-id="${segment}"]`,
-			) as HTMLElement | null;
+				current,
+			);
 			if (!el) return null;
 			current = el;
 		}
 
 		return current as HTMLElement;
+	}
+
+	private querySelectorDeep(
+		selector: string,
+		root: ParentNode,
+	): Element | null {
+		let el = root.querySelector(selector);
+		if (el) return el;
+
+		const hosts =
+			root === document.body
+				? root.querySelectorAll("*")
+				: (root as Element).querySelectorAll("*");
+		for (const host of hosts) {
+			el = host.querySelector(selector);
+			if (el) return el;
+			if (host.shadowRoot) {
+				el = this.querySelectorDeep(selector, host.shadowRoot);
+				if (el) return el;
+			}
+		}
+		return null;
 	}
 
 	getAll(): ComponentEntry[] {
@@ -71,6 +112,10 @@ class ComponentRegistry {
 	}
 
 	getCurrentPageComponents(): ComponentEntry[] {
+		if (this.components.size === 0) {
+			this.initialized = false;
+			this.initialize();
+		}
 		if (!this.currentInterfaceId) return this.getAll();
 		return this.getByInterface(this.currentInterfaceId);
 	}
