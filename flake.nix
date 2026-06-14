@@ -24,6 +24,8 @@
         devShells.default = pkgs.mkShell {
           packages = with pkgs; [
             bun
+
+            nixd
           ];
           buildInputs = [ pkgs.bashInteractive ];
           shellHook = "";
