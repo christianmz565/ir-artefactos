@@ -32,14 +32,49 @@ export class ComponentViewer extends LitElement {
 			return;
 		}
 
-		const clone = target.cloneNode(true) as HTMLElement;
+		let clone = target.cloneNode(true) as HTMLElement;
+
+		if (target.tagName.toLowerCase() === "th") {
+			const table = target.closest("table");
+			if (table) {
+				clone = table.cloneNode(true) as HTMLElement;
+				const th = target as HTMLTableCellElement;
+				const colIndex = th.cellIndex;
+				
+				const rows = clone.querySelectorAll("tr");
+				rows.forEach((row) => {
+					const cells = Array.from(row.children);
+					cells.forEach((cell, index) => {
+						if (index !== colIndex) {
+							cell.remove();
+						}
+					});
+				});
+			}
+		}
 
 		const overlay = document.createElement("div");
 		overlay.className = "component-viewer-overlay";
 		overlay.attachShadow({ mode: "open" });
 		const shadowRoot = overlay.shadowRoot;
 		if (!shadowRoot) return;
-		shadowRoot.innerHTML = `
+
+		const rootNode = target.getRootNode();
+		if (rootNode instanceof ShadowRoot) {
+			shadowRoot.adoptedStyleSheets = [...rootNode.adoptedStyleSheets];
+			const styleTags = rootNode.querySelectorAll("style");
+			styleTags.forEach((style) => {
+				shadowRoot.appendChild(style.cloneNode(true));
+			});
+		} else if (rootNode === document) {
+			shadowRoot.adoptedStyleSheets = [...document.adoptedStyleSheets];
+			const styleTags = document.querySelectorAll("style");
+			styleTags.forEach((style) => {
+				shadowRoot.appendChild(style.cloneNode(true));
+			});
+		}
+
+		shadowRoot.innerHTML += `
 			<style>
 				:host {
 					position: fixed;
