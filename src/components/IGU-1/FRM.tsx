@@ -1,8 +1,8 @@
 import { useState } from "react";
 import Card from "react-bootstrap/Card";
-import { TextInput } from "./TextInput";
-import { SelectInput } from "./SelectInput";
-import { ActionButton } from "./ActionButton";
+import { Input } from "../INP";
+import { Select } from "../SEL";
+import { Button } from "../BTN";
 
 export interface StudentFormData {
   name: string;
@@ -43,21 +43,21 @@ export function StudentForm({
       <Card.Body>
         <Card.Title>{isEdit ? "Edit Student" : "Add New Student"}</Card.Title>
         <form onSubmit={handleSubmit}>
-          <TextInput
+          <Input
             label="Name"
             placeholder="Enter full name"
             value={formData.name}
             onChange={(v) => setFormData({ ...formData, name: v })}
             id="student-name"
           />
-          <TextInput
+          <Input
             label="Email"
             placeholder="Enter email address"
             value={formData.email}
             onChange={(v) => setFormData({ ...formData, email: v })}
             id="student-email"
           />
-          <SelectInput
+          <Select
             label="Course"
             options={COURSE_OPTIONS}
             value={formData.course}
@@ -65,12 +65,12 @@ export function StudentForm({
             id="student-course"
           />
           <div className="d-flex gap-2 mt-3">
-            <ActionButton type="submit">
+            <Button type="submit">
               {isEdit ? "Update" : "Save"}
-            </ActionButton>
-            <ActionButton variant="secondary" onClick={onCancel}>
+            </Button>
+            <Button variant="secondary" onClick={onCancel}>
               Cancel
-            </ActionButton>
+            </Button>
           </div>
         </form>
       </Card.Body>

@@ -1,6 +1,6 @@
 import Form from "react-bootstrap/Form";
 
-interface TextInputProps {
+interface InputProps {
   label?: string;
   placeholder?: string;
   value?: string;
@@ -8,13 +8,13 @@ interface TextInputProps {
   id?: string;
 }
 
-export function TextInput({
+export function Input({
   label,
   placeholder,
   value,
   onChange,
   id,
-}: TextInputProps) {
+}: InputProps) {
   return (
     <Form.Group controlId={id}>
       {label && <Form.Label>{label}</Form.Label>}

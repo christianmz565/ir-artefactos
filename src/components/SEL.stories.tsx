@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { SelectInput } from "./SelectInput";
+import { Select } from "./SEL";
 
-const meta: Meta<typeof SelectInput> = {
-  title: "Components/SelectInput",
-  component: SelectInput,
+const meta: Meta<typeof Select> = {
+  title: "SEL",
+  component: Select,
   tags: ["autodocs"],
   argTypes: {
     label: { control: "text" },
@@ -12,7 +12,7 @@ const meta: Meta<typeof SelectInput> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof SelectInput>;
+type Story = StoryObj<typeof Select>;
 
 const COURSE_OPTIONS = [
   { value: "", label: "All Courses" },
@@ -21,19 +21,20 @@ const COURSE_OPTIONS = [
   { value: "Physics", label: "Physics" },
 ];
 
-export const Default: Story = {
+export const SEL_1: Story = {
+  name: "SEL-1",
   args: {
-    label: "Course",
     options: COURSE_OPTIONS,
-    id: "select-default",
+    id: "filter-course",
   },
 };
 
-export const PreSelected: Story = {
+export const SEL_2: Story = {
+  name: "SEL-2",
   args: {
     label: "Course",
     options: COURSE_OPTIONS,
     value: "CS",
-    id: "select-preselected",
+    id: "student-course",
   },
 };

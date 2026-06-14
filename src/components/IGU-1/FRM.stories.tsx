@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { StudentForm } from "./StudentForm";
+import { StudentForm } from "./FRM";
 
 const meta: Meta<typeof StudentForm> = {
-  title: "Components/StudentForm",
+  title: "IGU-1/FRM",
   component: StudentForm,
   tags: ["autodocs"],
 };
@@ -10,7 +10,8 @@ const meta: Meta<typeof StudentForm> = {
 export default meta;
 type Story = StoryObj<typeof StudentForm>;
 
-export const AddNew: Story = {
+export const IGU_1_FRM_Add: Story = {
+  name: "IGU-1-FRM (Add)",
   args: {
     isEdit: false,
     onSave: (data) => console.log("Save:", data),
@@ -18,7 +19,8 @@ export const AddNew: Story = {
   },
 };
 
-export const EditExisting: Story = {
+export const IGU_1_FRM_Edit: Story = {
+  name: "IGU-1-FRM (Edit)",
   args: {
     isEdit: true,
     initialData: {

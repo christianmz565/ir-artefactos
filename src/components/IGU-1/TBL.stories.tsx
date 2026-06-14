@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { StudentTable } from "./StudentTable";
+import { StudentTable } from "./TBL";
 
 const meta: Meta<typeof StudentTable> = {
-  title: "Components/StudentTable",
+  title: "IGU-1/TBL",
   component: StudentTable,
   tags: ["autodocs"],
 };
@@ -17,7 +17,8 @@ const SAMPLE_STUDENTS = [
   { id: 4, name: "David Brown", email: "david@example.com", course: "CS" },
 ];
 
-export const Default: Story = {
+export const IGU_1_TBL: Story = {
+  name: "IGU-1-TBL",
   args: {
     students: SAMPLE_STUDENTS,
     onEdit: (s) => console.log("Edit:", s),
@@ -25,7 +26,8 @@ export const Default: Story = {
   },
 };
 
-export const Empty: Story = {
+export const IGU_1_TBL_Empty: Story = {
+  name: "IGU-1-TBL (Empty)",
   args: {
     students: [],
     onEdit: () => {},

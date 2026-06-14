@@ -5,7 +5,7 @@ interface SelectOption {
   label: string;
 }
 
-interface SelectInputProps {
+interface SelectProps {
   label?: string;
   options: SelectOption[];
   value?: string;
@@ -13,13 +13,13 @@ interface SelectInputProps {
   id?: string;
 }
 
-export function SelectInput({
+export function Select({
   label,
   options,
   value,
   onChange,
   id,
-}: SelectInputProps) {
+}: SelectProps) {
   return (
     <Form.Group controlId={id}>
       {label && <Form.Label>{label}</Form.Label>}

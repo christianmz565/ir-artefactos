@@ -1,6 +1,6 @@
-import Button from "react-bootstrap/Button";
+import BootstrapButton from "react-bootstrap/Button";
 
-interface ActionButtonProps {
+interface ButtonProps {
   children: React.ReactNode;
   variant?: string;
   onClick?: () => void;
@@ -9,16 +9,16 @@ interface ActionButtonProps {
   size?: "sm" | "lg";
 }
 
-export function ActionButton({
+export function Button({
   children,
   variant = "primary",
   onClick,
   type = "button",
   disabled,
   size,
-}: ActionButtonProps) {
+}: ButtonProps) {
   return (
-    <Button
+    <BootstrapButton
       variant={variant}
       onClick={onClick}
       type={type}
@@ -26,6 +26,6 @@ export function ActionButton({
       size={size}
     >
       {children}
-    </Button>
+    </BootstrapButton>
   );
 }

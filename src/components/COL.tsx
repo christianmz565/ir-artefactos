@@ -1,12 +1,12 @@
 import Card from "react-bootstrap/Card";
 import Table from "react-bootstrap/Table";
 
-interface TableColumnProps {
+interface ColumnProps {
   header: string;
   items: string[];
 }
 
-export function TableColumn({ header, items }: TableColumnProps) {
+export function Column({ header, items }: ColumnProps) {
   return (
     <Card>
       <Table className="mb-0" hover>

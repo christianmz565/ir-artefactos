@@ -1,6 +1,6 @@
-import { TextInput } from "./TextInput";
-import { SelectInput } from "./SelectInput";
-import { ActionButton } from "./ActionButton";
+import { Input } from "../INP";
+import { Select } from "../SEL";
+import { Button } from "../BTN";
 
 const COURSE_OPTIONS = [
   { value: "", label: "All Courses" },
@@ -28,19 +28,19 @@ export function Header({
     <div className="d-flex align-items-center justify-content-between mb-4 flex-wrap gap-3">
       <h1 className="mb-0">Students Management</h1>
       <div className="d-flex gap-3 align-items-center">
-        <TextInput
+        <Input
           placeholder="Search by name..."
           value={searchQuery}
           onChange={onSearchChange}
           id="search-students"
         />
-        <SelectInput
+        <Select
           options={COURSE_OPTIONS}
           value={filterCourse}
           onChange={onFilterChange}
           id="filter-course"
         />
-        <ActionButton onClick={onAddStudent}>+ Add Student</ActionButton>
+        <Button onClick={onAddStudent}>+ Add Student</Button>
       </div>
     </div>
   );

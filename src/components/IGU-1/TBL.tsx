@@ -1,6 +1,6 @@
 import Card from "react-bootstrap/Card";
 import Table from "react-bootstrap/Table";
-import { ActionButton } from "./ActionButton";
+import { Button } from "../BTN";
 
 export interface Student {
   id: number;
@@ -37,16 +37,16 @@ export function StudentTable({ students, onEdit, onDelete }: StudentTableProps) 
               <td>{s.course}</td>
               <td>
                 <div className="d-flex gap-1">
-                  <ActionButton size="sm" onClick={() => onEdit(s)}>
+                  <Button size="sm" onClick={() => onEdit(s)}>
                     Edit
-                  </ActionButton>
-                  <ActionButton
+                  </Button>
+                  <Button
                     size="sm"
                     variant="danger"
                     onClick={() => onDelete(s.id)}
                   >
                     Delete
-                  </ActionButton>
+                  </Button>
                 </div>
               </td>
             </tr>
