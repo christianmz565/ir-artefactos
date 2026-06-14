@@ -12,7 +12,8 @@
 		"format": "biome format --write ."
 	},
 	"dependencies": {
-		"lit": "^3.3.2"
+		"lit": "^3.3.2",
+		"wired-elements": "^3.0.0-rc.6"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "2.5.0",
