@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { Input } from "./Input";
+import { Input } from "./INP";
 
 const meta: Meta<typeof Input> = {
-  title: "Componentes/Input",
+  title: "Componentes/INP",
   component: Input,
   tags: ["autodocs"],
 };

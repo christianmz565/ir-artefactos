@@ -1,4 +1,4 @@
-import { Button } from "@/components/Button/Button";
+import { Button } from "@/components/BTN-DEFAULT/BTN-DEFAULT";
 
 interface FormButtonsProps {
   onCancel?: () => void;

@@ -1,4 +1,4 @@
-import { Input } from "@/components/Input/Input";
+import { Input } from "@/components/INP/INP";
 
 interface SearchInputProps {
   value: string;
