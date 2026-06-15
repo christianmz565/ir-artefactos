@@ -7,6 +7,7 @@ interface ButtonProps {
   type?: "button" | "submit" | "reset";
   disabled?: boolean;
   size?: "sm" | "lg";
+  id?: string;
 }
 
 export function Button({
@@ -16,6 +17,7 @@ export function Button({
   type = "button",
   disabled,
   size,
+  id,
 }: ButtonProps) {
   return (
     <BootstrapButton
@@ -24,6 +26,7 @@ export function Button({
       type={type}
       disabled={disabled}
       size={size}
+      id={id}
     >
       {children}
     </BootstrapButton>
