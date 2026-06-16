@@ -1,4 +1,4 @@
-import { Button } from "@/components/BTN-DEFAULT/BTN-DEFAULT";
+import { Button } from "@/components/Button/Button";
 import type { Student } from "@/types/student";
 
 interface StudentRowProps

@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { Column } from "./COL";
+import { Column } from "./Column";
 
 const meta: Meta<typeof Column> = {
-  title: "Componentes/COL",
+  title: "Componentes/COL — Columna de tabla",
   component: Column,
   tags: ["autodocs"],
 };

@@ -21,10 +21,10 @@ bun run build           # typecheck + storybook build (CI gate)
 
 ```
 src/
-├── components/          # Reusable UI atoms with nomenclature prefixes
-│   └── <PREFIX>/
-│       ├── <PREFIX>.tsx
-│       └── <PREFIX>.stories.tsx
+├── components/          # Reusable UI atoms with descriptive names
+│   └── <Name>/
+│       ├── <Name>.tsx
+│       └── <Name>.stories.tsx
 ├── igu/                 # Screen compositions by requirement ID
 │   └── IGU-N/
 │       ├── Pantalla.tsx          # Top-level screen component
@@ -64,20 +64,20 @@ All components and screens must follow the project's nomenclature system. Each a
 
 ### Naming Rules
 
-1. **Folder name** = prefix (e.g., `BTN-DEFAULT/`, `INP/`, `SELECT/`)
-2. **File name** = prefix (e.g., `BTN-DEFAULT.tsx`, `INP.tsx`)
-3. **Story title** = `"Componentes/<PREFIX>"` (e.g., `"Componentes/BTN-DEFAULT"`)
-4. **Export name** = descriptive JS identifier (e.g., `Button`, `Input`, `Select`) — not the prefix
+1. **Folder name** = descriptive name (e.g., `Button/`, `Input/`, `Select/`)
+2. **File name** = descriptive name (e.g., `Button.tsx`, `Input.tsx`)
+3. **Story title** = `"Componentes/<PREFIX> — <Descripción>"` (e.g., `"Componentes/BTN — Botón"`)
+4. **Export name** = descriptive JS identifier (e.g., `Button`, `Input`, `Select`)
 5. **IGU screens** = numbered (`IGU-1/`, `IGU-2/`, etc.)
 
 ### Examples
 
 ```
-src/components/BTN-DEFAULT/BTN-DEFAULT.tsx        → export function Button
-src/components/BTN-DEFAULT/BTN-DEFAULT.stories.tsx → title: "Componentes/BTN-DEFAULT"
-src/components/INP/INP.tsx                         → export function Input
-src/components/SELECT/SELECT.tsx                   → export function Select
-src/igu/IGU-1/Pantalla.tsx                         → title: "Requisitos/.../IGU-1 (...)/Pantalla"
+src/components/Button/Button.tsx        → export function Button
+src/components/Button/Button.stories.tsx → title: "Componentes/BTN — Botón"
+src/components/Input/Input.tsx          → export function Input
+src/components/Select/Select.tsx        → export function Select
+src/igu/IGU-1/Pantalla.tsx              → title: "Requisitos/.../IGU-1 (...)/Pantalla"
 ```
 
 ## Biome Rules (non-obvious)
@@ -102,8 +102,8 @@ src/igu/IGU-1/Pantalla.tsx                         → title: "Requisitos/.../IG
 
 ## Adding a Component
 
-1. Create `src/components/<PREFIX>/<PREFIX>.tsx` with props interface exported.
-2. Create `src/components/<PREFIX>/<PREFIX>.stories.tsx` with at least `Default` story.
+1. Create `src/components/<Name>/<Name>.tsx` with props interface exported.
+2. Create `src/components/<Name>/<Name>.stories.tsx` with at least `Default` story.
 3. Use `@/` imports, `import type` for types, named function export.
 4. Storybook auto-discovers via `src/**/*.stories.@(js|jsx|mjs|ts|tsx)` glob.
 

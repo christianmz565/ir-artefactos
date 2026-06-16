@@ -3,7 +3,8 @@ import { MOCK_STUDENTS } from "@/mocks/students";
 import { StudentTableBody } from "./StudentTableBody";
 
 const meta: Meta<typeof StudentTableBody> = {
-  title: "Requisitos/Gestión de Estudiantes/IGU-1 (Lista)/Tabla/CuerpoTabla",
+  title:
+    "Requisitos/Gestión de Estudiantes/IGU-1 (Lista)/TAB-1 — Cuerpo de tabla",
   component: StudentTableBody,
   tags: ["autodocs"],
 };

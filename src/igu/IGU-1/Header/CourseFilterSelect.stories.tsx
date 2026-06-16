@@ -3,7 +3,7 @@ import { CourseFilterSelect } from "./CourseFilterSelect";
 
 const meta: Meta<typeof CourseFilterSelect> = {
   title:
-    "Requisitos/Gestión de Estudiantes/IGU-1 (Lista)/Encabezado/FiltroCurso",
+    "Requisitos/Gestión de Estudiantes/IGU-1 (Lista)/SELECT-1 — Filtrar por curso",
   component: CourseFilterSelect,
   tags: ["autodocs"],
   argTypes: {

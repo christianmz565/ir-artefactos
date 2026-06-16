@@ -2,7 +2,8 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { StudentRow } from "./StudentRow";
 
 const meta: Meta<typeof StudentRow> = {
-  title: "Requisitos/Gestión de Estudiantes/IGU-1 (Lista)/Tabla/FilaEstudiante",
+  title:
+    "Requisitos/Gestión de Estudiantes/IGU-1 (Lista)/TAB-1 — Fila de estudiante",
   component: StudentRow,
   tags: ["autodocs"],
   argTypes: {

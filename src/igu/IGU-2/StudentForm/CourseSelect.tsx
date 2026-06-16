@@ -1,4 +1,4 @@
-import { Select } from "@/components/SELECT/SELECT";
+import { Select } from "@/components/Select/Select";
 import { MOCK_FORM_COURSE_OPTIONS } from "@/mocks/students";
 
 interface CourseSelectProps {

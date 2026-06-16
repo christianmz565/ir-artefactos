@@ -1,4 +1,4 @@
-import { Input } from "@/components/INP/INP";
+import { Input } from "@/components/Input/Input";
 
 interface NameInputProps {
   value: string;

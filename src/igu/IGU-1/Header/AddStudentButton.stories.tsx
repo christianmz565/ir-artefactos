@@ -3,7 +3,7 @@ import { AddStudentButton } from "./AddStudentButton";
 
 const meta: Meta<typeof AddStudentButton> = {
   title:
-    "Requisitos/Gestión de Estudiantes/IGU-1 (Lista)/Encabezado/BotónAgregar",
+    "Requisitos/Gestión de Estudiantes/IGU-1 (Lista)/BTN-1 — Agregar estudiante",
   component: AddStudentButton,
   tags: ["autodocs"],
 };
