@@ -27,3 +27,6 @@ dist-ssr
 storybook-static
 
 .direnv/
+.env*
+!.env.example
+!.envrc
