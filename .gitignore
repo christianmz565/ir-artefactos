@@ -30,3 +30,5 @@ storybook-static
 .env*
 !.env.example
 !.envrc
+resources
+a
