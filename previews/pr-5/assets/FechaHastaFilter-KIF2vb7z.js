@@ -1,0 +1,1 @@
+import{i as e}from"./preload-helper-xPQekRTU.js";import{t}from"./jsx-runtime-CaZkqeYb.js";import{n,t as r}from"./Input-0Arx89wM.js";function i(){return(0,a.jsx)(r,{label:`Hasta`,type:`date`,id:`filter-fecha-hasta`})}var a,o=e((()=>{n(),a=t(),i.__docgenInfo={description:``,methods:[],displayName:`FechaHastaFilter`}}));export{o as n,i as t};

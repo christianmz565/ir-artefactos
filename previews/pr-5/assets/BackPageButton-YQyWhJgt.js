@@ -1,0 +1,1 @@
+import{i as e}from"./preload-helper-xPQekRTU.js";import{t}from"./jsx-runtime-CaZkqeYb.js";import{n,t as r}from"./Button-CWTkHzk0.js";function i(){return(0,a.jsx)(r,{variant:`link`,id:`back-page`,size:`lg`,children:`← Regresar`})}var a,o=e((()=>{n(),a=t(),i.__docgenInfo={description:``,methods:[],displayName:`BackPageButton`}}));export{o as n,i as t};

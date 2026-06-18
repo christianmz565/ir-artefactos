@@ -1,0 +1,11 @@
+import{i as e}from"./preload-helper-xPQekRTU.js";import{n as t,t as n}from"./SearchInput-sGgNVHSp.js";var r,i,a,o;e((()=>{t(),r={title:`Requisitos/Gestión de Estudiantes/IGU-7 (Lista)/SRCH-1 — Búsqueda`,component:n,tags:[`autodocs`],argTypes:{value:{control:`text`}}},i={args:{value:``,onChange:()=>{}}},a={args:{value:`Alice`,onChange:()=>{}}},i.parameters={...i.parameters,docs:{...i.parameters?.docs,source:{originalSource:`{
+  args: {
+    value: "",
+    onChange: () => {}
+  }
+}`,...i.parameters?.docs?.source}}},a.parameters={...a.parameters,docs:{...a.parameters?.docs,source:{originalSource:`{
+  args: {
+    value: "Alice",
+    onChange: () => {}
+  }
+}`,...a.parameters?.docs?.source}}},o=[`Default`,`ConValor`]}))();export{a as ConValor,i as Default,o as __namedExportsOrder,r as default};

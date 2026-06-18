@@ -1,0 +1,1 @@
+import{i as e}from"./preload-helper-xPQekRTU.js";import{t}from"./jsx-runtime-CaZkqeYb.js";import{n,t as r}from"./Button-CWTkHzk0.js";function i(){return(0,a.jsx)(r,{id:`add-notificacion`,children:`+ Agregar Notificación`})}var a,o=e((()=>{n(),a=t(),i.__docgenInfo={description:``,methods:[],displayName:`AddNotificacionButton`}}));export{o as n,i as t};
