@@ -1,6 +1,6 @@
 import Card from "react-bootstrap/Card";
-import { Button } from "@/components/Button/Button";
 import { MOCK_REPORTES } from "@/mocks/reportes";
+import { DownloadPdfButton } from "../DownloadPdfButton/DownloadPdfButton";
 
 export function PdfViewer() {
   const reporte = MOCK_REPORTES[0];
@@ -26,13 +26,7 @@ export function PdfViewer() {
           </div>
         )}
         <div className="mt-3 text-end">
-          <Button
-            variant="primary"
-            id="BTN-DESCARGAR-REPORTE"
-            onClick={() => window.open(reporte.urlDescarga, "_blank")}
-          >
-            Descargar {reporte.formato}
-          </Button>
+          <DownloadPdfButton />
         </div>
       </Card.Body>
     </Card>
