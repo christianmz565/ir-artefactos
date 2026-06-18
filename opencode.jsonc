@@ -3,9 +3,15 @@
   "mcp": {
     "notion": {
       "type": "local",
-      "command": ["bunx", "@notionhq/notion-mcp-server"],
+      "command": [
+        "bunx",
+        "mcp-remote",
+        "https://n8n.mistercricro8.top/mcp/b4e536e8-45b8-4b5c-b02f-36f5c19f85e9",
+        "--header",
+        "Authorization: Bearer {env:N8N_NOTION_TOKEN}"
+      ],
       "environment": {
-        "NOTION_TOKEN": "${NOTION_TOKEN}"
+        "N8N_NOTION_TOKEN": "{env:N8N_NOTION_TOKEN}"
       }
     }
   }
