@@ -26,3 +26,8 @@ export const WithValue: Story = {
     placeholder: "correo@ejemplo.com",
   },
 };
+
+export const DateCalendar: Story = {
+  name: "Campo de fecha",
+  args: { label: "Fecha", type: "date" },
+};
