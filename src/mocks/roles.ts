@@ -1,99 +1,56 @@
-import type { Rol } from "../types/rol";
+import type { Rol } from "@/types/rol";
 
 export const MOCK_ROLES: Rol[] = [
   {
     id: 1,
-    nombre: "Administrador de Sistema",
-    descripcion: "Acceso total a todos los módulos y configuraciones.",
-    esPredeterminado: true,
+    nombre: "Administrador",
     permisos: [
-      {
-        moduloId: "M01",
-        moduloNombre: "Gestión de Auxiliares",
-        leer: true,
-        escribir: true,
-        eliminar: true,
-      },
-      {
-        moduloId: "M02",
-        moduloNombre: "Gestión de Estudiantes",
-        leer: true,
-        escribir: true,
-        eliminar: true,
-      },
-      {
-        moduloId: "M03",
-        moduloNombre: "Gestión de Profesores",
-        leer: true,
-        escribir: true,
-        eliminar: true,
-      },
-      {
-        moduloId: "M04",
-        moduloNombre: "Gestión de Apoderados",
-        leer: true,
-        escribir: true,
-        eliminar: true,
-      },
-      {
-        moduloId: "M05",
-        moduloNombre: "Gestión de Roles",
-        leer: true,
-        escribir: true,
-        eliminar: true,
-      },
-      {
-        moduloId: "M06",
-        moduloNombre: "Gestión de Reportes",
-        leer: true,
-        escribir: true,
-        eliminar: true,
-      },
+      "Gestionar usuarios",
+      "Gestionar roles",
+      "Gestionar configuración",
+      "Ver reportes",
     ],
+    estado: "Activo",
   },
   {
     id: 2,
-    nombre: "Auxiliar de Ingreso",
-    descripcion: "Permite registrar asistencia y ver reportes básicos.",
-    esPredeterminado: true,
-    permisos: [
-      {
-        moduloId: "M02",
-        moduloNombre: "Gestión de Estudiantes",
-        leer: true,
-        escribir: false,
-        eliminar: false,
-      },
-      {
-        moduloId: "M06",
-        moduloNombre: "Gestión de Reportes",
-        leer: true,
-        escribir: false,
-        eliminar: false,
-      },
-    ],
+    nombre: "Docente",
+    permisos: ["Registrar asistencia", "Ver reportes", "Enviar notificaciones"],
+    estado: "Activo",
   },
   {
     id: 3,
-    nombre: "Docente",
-    descripcion:
-      "Visualización de la información de sus estudiantes y reportes de su clase.",
-    esPredeterminado: false,
+    nombre: "Auxiliar",
     permisos: [
-      {
-        moduloId: "M02",
-        moduloNombre: "Gestión de Estudiantes",
-        leer: true,
-        escribir: true,
-        eliminar: false,
-      },
-      {
-        moduloId: "M04",
-        moduloNombre: "Gestión de Apoderados",
-        leer: true,
-        escribir: false,
-        eliminar: false,
-      },
+      "Registrar asistencia",
+      "Ver información de estudiantes",
+      "Enviar notificaciones",
     ],
+    estado: "Activo",
   },
+  {
+    id: 4,
+    nombre: "Apoderado",
+    permisos: [
+      "Ver información de estudiante",
+      "Ver reportes de asistencia",
+      "Recibir notificaciones",
+    ],
+    estado: "Inactivo",
+  },
+];
+
+export const MOCK_PERMISO_OPTIONS = [
+  { value: "Gestionar usuarios", label: "Gestionar usuarios" },
+  { value: "Gestionar roles", label: "Gestionar roles" },
+  { value: "Gestionar configuración", label: "Gestionar configuración" },
+  { value: "Ver reportes", label: "Ver reportes" },
+  { value: "Registrar asistencia", label: "Registrar asistencia" },
+  { value: "Enviar notificaciones", label: "Enviar notificaciones" },
+  {
+    value: "Ver información de estudiantes",
+    label: "Ver información de estudiantes",
+  },
+  { value: "Ver reportes de asistencia", label: "Ver reportes de asistencia" },
+  { value: "Recibir notificaciones", label: "Recibir notificaciones" },
 ];
