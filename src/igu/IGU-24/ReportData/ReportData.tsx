@@ -10,7 +10,7 @@ export function ReportData() {
     <Card className="mb-4">
       <Card.Body>
         <Card.Title>Datos del PDF</Card.Title>
-        <div className="row">
+        <div className="col">
           <div className="col-md-4">
             <p className="mb-1">
               <strong>ID:</strong> {reporte.id}
@@ -30,7 +30,7 @@ export function ReportData() {
       </Card.Body>
       <Card.Body>
         <Card.Title>Datos del Estudiante</Card.Title>
-        <div className="row">
+        <div className="col">
           <div className="col-md-3">
             <p className="mb-1">
               <strong>Nombre:</strong> {asistencia.estudianteNombre}

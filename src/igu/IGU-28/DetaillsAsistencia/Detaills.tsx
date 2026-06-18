@@ -1,6 +1,5 @@
 import Badge from "react-bootstrap/Badge";
 import Card from "react-bootstrap/Card";
-import { Button } from "@/components/Button/Button";
 import { MOCK_ASISTENCIAS } from "@/mocks/asistencias";
 
 function getEstadoVariant(estado: string): string {
@@ -21,7 +20,7 @@ export function DetalleAsistencia() {
 
   return (
     <>
-      <Card className="mb-3">
+      <Card className="my-3">
         <Card.Body>
           <Card.Title>Datos del Estudiante</Card.Title>
           <div className="row">
@@ -91,10 +90,6 @@ export function DetalleAsistencia() {
           </div>
         </Card.Body>
       </Card>
-
-      <Button variant="secondary" id="BTN-VOLVER">
-        Volver al listado
-      </Button>
     </>
   );
 }

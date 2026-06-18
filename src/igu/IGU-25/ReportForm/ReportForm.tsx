@@ -2,6 +2,7 @@ import { useState } from "react";
 import Card from "react-bootstrap/Card";
 import Form from "react-bootstrap/Form";
 import ProgressBar from "react-bootstrap/ProgressBar";
+import { Alert } from "@/components/Alert/Alert";
 import { EstudianteField } from "./EstudianteField";
 import { FechaDesdeField } from "./FechaDesdeField";
 import { FechaHastaField } from "./FechaHastaField";
@@ -14,15 +15,18 @@ export function ReportForm() {
   const [loading, setLoading] = useState(false);
   const [progress, setProgress] = useState(0);
   const [formato, setFormato] = useState("PDF");
+  const [showSuccess, setShowSuccess] = useState(false);
 
   const handleGenerar = () => {
     setLoading(true);
     setProgress(0);
+    setShowSuccess(false);
     const interval = setInterval(() => {
       setProgress((p) => {
         if (p >= 100) {
           clearInterval(interval);
           setLoading(false);
+          setShowSuccess(true);
           return 100;
         }
         return p + 10;
@@ -58,6 +62,12 @@ export function ReportForm() {
               now={progress}
               label={`${progress}%`}
               className="mb-3"
+            />
+          )}
+          {showSuccess && (
+            <Alert
+              variant="success"
+              message="El reporte fue generado exitosamente."
             />
           )}
           <GenerateButton loading={loading} onClick={handleGenerar} />
