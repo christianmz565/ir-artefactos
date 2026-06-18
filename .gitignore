@@ -32,3 +32,5 @@ storybook-static
 !.envrc
 resources
 a
+
+.playwright-mcp/
