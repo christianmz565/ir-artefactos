@@ -1,0 +1,1 @@
+import{i as e}from"./preload-helper-xPQekRTU.js";import{t}from"./jsx-runtime-CaZkqeYb.js";function n(){return(0,r.jsx)(`tr`,{children:(0,r.jsx)(`td`,{colSpan:5,className:`py-4 text-center text-muted`,children:`∅ No se encontraron roles`})})}var r,i=e((()=>{r=t(),n.__docgenInfo={description:``,methods:[],displayName:`EmptyState`}}));export{i as n,n as t};
