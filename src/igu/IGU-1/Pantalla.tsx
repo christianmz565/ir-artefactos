@@ -1,12 +1,11 @@
 import Container from "react-bootstrap/Container";
-import { Header } from "./Header/Header";
-import { StudentTable } from "./StudentTable/StudentTable";
+import { AuxiliarForm } from "./AuxiliarForm/AuxiliarForm";
 
 export function Pantalla() {
   return (
     <Container className="py-4">
-      <Header />
-      <StudentTable />
+      <h1 className="mb-4">Crear Auxiliar</h1>
+      <AuxiliarForm />
     </Container>
   );
 }

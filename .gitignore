@@ -30,10 +30,7 @@ storybook-static
 .env*
 !.env.example
 !.envrc
-<<<<<<< Updated upstream
-=======
 resources
 a
 
 .playwright-mcp/
->>>>>>> Stashed changes

@@ -4,11 +4,14 @@
 
 ```bash
 bun run storybook       # Dev server at http://localhost:6006
-bun run lint            # Biome auto-fix (writes changes)
+bun run lint            # Biome check --write (auto-fix + format)
 bun run lint:check      # Biome check only (CI-safe)
 bun run typecheck       # tsc -b
 bun run build           # typecheck + storybook build (CI gate)
+bun run build-storybook # Storybook static build only (no typecheck)
 ```
+
+Local pre-push gate: `bun run lint:check && bun run typecheck && bun run build` (CI does not run lint/typecheck separately).
 
 ## Architecture
 
@@ -42,6 +45,7 @@ src/
 - **Component pattern**: named exports (`export function Button`), default export for story meta.
 - **No tests**: repo has no test runner configured. Verification = lint + typecheck + storybook build.
 - **a11y addon**: runs in `todo` mode (reports violations, doesn't break build).
+- **Story glob**: `src/**/*.mdx` and `src/**/*.stories.@(js|jsx|mjs|ts|tsx)` (see `.storybook/main.ts`).
 
 ## Nomenclatura de Artefactos
 
@@ -85,8 +89,9 @@ src/igu/IGU-1/Pantalla.tsx              → title: "Requisitos/.../IGU-1 (...)/P
 - `noUnusedVariables` / `noUnusedImports`: **error** — will fail typecheck.
 - `useImportType`: **error** — must use `import type` for type-only imports.
 - `useConst`: **error** — use `const` unless reassignment is needed.
-- `noConsole`: **warn** — avoid `console.log` in production code.
 - `useExhaustiveDependencies`: **error** — React hooks must list all deps.
+- `noConsole` / `noExplicitAny` / `noNegationElse`: **warn** — avoid in production code.
+- `assist.actions`: `organizeImports` + `useSortedProperties` are **on** — Biome rewrites these on `lint`.
 
 ## CI
 
