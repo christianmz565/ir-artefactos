@@ -1,0 +1,3 @@
+import{i as e}from"./preload-helper-xPQekRTU.js";import{n as t,t as n}from"./StudentTable-lfCM70r6.js";var r,i,a;e((()=>{t(),r={title:`Requisitos/Gestión de Estudiantes/IGU-7 (Lista)/TAB-1 — Tabla de estudiantes`,component:n,tags:[`autodocs`]},i={name:`Con Estudiantes`},i.parameters={...i.parameters,docs:{...i.parameters?.docs,source:{originalSource:`{
+  name: "Con Estudiantes"
+}`,...i.parameters?.docs?.source}}},a=[`ConEstudiantes`]}))();export{i as ConEstudiantes,a as __namedExportsOrder,r as default};

@@ -1,0 +1,1 @@
+import{i as e}from"./preload-helper-xPQekRTU.js";import{t}from"./jsx-runtime-CaZkqeYb.js";import{n,t as r}from"./Button-CWkjz09L.js";function i(){return(0,a.jsx)(r,{children:`+ Agregar Estudiante`})}var a,o=e((()=>{n(),a=t(),i.__docgenInfo={description:``,methods:[],displayName:`AddStudentButton`}}));export{o as n,i as t};
