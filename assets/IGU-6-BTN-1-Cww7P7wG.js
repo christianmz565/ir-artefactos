@@ -1,0 +1,1 @@
+import{i as e}from"./preload-helper-xPQekRTU.js";import{t}from"./jsx-runtime-CaZkqeYb.js";import{n,t as r}from"./Button-B9LMhKfC.js";function i(){return(0,a.jsx)(r,{type:`submit`,id:`igu-6-btn-1`,children:`Guardar`})}var a,o=e((()=>{n(),a=t(),i.__docgenInfo={description:``,methods:[],displayName:`IGU_6_BTN_1`}}));export{o as n,i as t};

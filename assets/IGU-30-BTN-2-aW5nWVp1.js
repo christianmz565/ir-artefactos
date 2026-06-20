@@ -1,0 +1,1 @@
+import{i as e}from"./preload-helper-xPQekRTU.js";import{t}from"./jsx-runtime-CaZkqeYb.js";import{n,t as r}from"./Button-B9LMhKfC.js";function i(){return(0,a.jsx)(r,{variant:`secondary`,id:`igu-30-btn-2`,children:`Cancelar`})}var a,o=e((()=>{n(),a=t(),i.__docgenInfo={description:``,methods:[],displayName:`IGU_30_BTN_2`}}));export{o as n,i as t};

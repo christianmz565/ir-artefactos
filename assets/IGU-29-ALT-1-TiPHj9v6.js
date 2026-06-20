@@ -1,0 +1,1 @@
+import{i as e}from"./preload-helper-xPQekRTU.js";import{t}from"./jsx-runtime-CaZkqeYb.js";function n(){return(0,r.jsx)(`p`,{className:`text-muted`,children:`No hay reportes generados.`})}var r,i=e((()=>{r=t(),n.__docgenInfo={description:``,methods:[],displayName:`IGU_29_ALT_1`}}));export{i as n,n as t};

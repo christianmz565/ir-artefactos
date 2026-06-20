@@ -1,0 +1,1 @@
+import{i as e}from"./preload-helper-xPQekRTU.js";import{t}from"./jsx-runtime-CaZkqeYb.js";import{n,t as r}from"./Button-B9LMhKfC.js";function i(){return(0,a.jsx)(r,{variant:`link`,id:`igu-18-btn-1`,size:`lg`,children:`← Regresar`})}var a,o=e((()=>{n(),a=t(),i.__docgenInfo={description:``,methods:[],displayName:`IGU_18_BTN_1`}}));export{o as n,i as t};

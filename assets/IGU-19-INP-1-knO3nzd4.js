@@ -1,0 +1,1 @@
+import{i as e}from"./preload-helper-xPQekRTU.js";import{t}from"./jsx-runtime-CaZkqeYb.js";import{n,t as r}from"./Input-Ca3QD38k.js";function i(){return(0,a.jsx)(r,{label:`Fecha`,type:`date`,value:`2026-06-15`,id:`igu-19-inp-1`})}var a,o=e((()=>{n(),a=t(),i.__docgenInfo={description:``,methods:[],displayName:`IGU_19_INP_1`}}));export{o as n,i as t};

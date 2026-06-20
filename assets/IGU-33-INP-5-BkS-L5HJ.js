@@ -1,0 +1,1 @@
+import{i as e}from"./preload-helper-xPQekRTU.js";import{t}from"./jsx-runtime-CaZkqeYb.js";import{n,t as r}from"./Input-Ca3QD38k.js";function i(){return(0,a.jsx)(r,{label:`Teléfono`,value:`999111222`,id:`igu-33-inp-5`})}var a,o=e((()=>{n(),a=t(),i.__docgenInfo={description:``,methods:[],displayName:`IGU_33_INP_5`}}));export{o as n,i as t};

@@ -1,0 +1,1 @@
+import{i as e}from"./preload-helper-xPQekRTU.js";import{t}from"./jsx-runtime-CaZkqeYb.js";import{n,t as r}from"./Input-Ca3QD38k.js";function i(){return(0,a.jsx)(r,{label:`Número de Documento`,placeholder:`Ingrese número de documento`,value:``,id:`igu-1-inp-3`})}var a,o=e((()=>{n(),a=t(),i.__docgenInfo={description:``,methods:[],displayName:`IGU_1_INP_3`}}));export{o as n,i as t};
