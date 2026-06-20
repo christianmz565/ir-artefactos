@@ -3,6 +3,9 @@ import type { Reporte } from "@/types/reporte";
 export const MOCK_REPORTES: Reporte[] = [
   {
     id: 1,
+    nombre: "Asistencia Mensual - Mayo",
+    periodo: "2026-05",
+    estado: "Completed",
     fechaGeneracion: "2026-06-15 14:30:00",
     usuarioSolicitante: "Administrador",
     filtros: {
@@ -16,6 +19,9 @@ export const MOCK_REPORTES: Reporte[] = [
   },
   {
     id: 2,
+    nombre: "Asistencia Individual - Juan Pérez",
+    periodo: "2026-06-01 a 2026-06-10",
+    estado: "Generating",
     fechaGeneracion: "2026-06-10 09:15:00",
     usuarioSolicitante: "María Quispe",
     filtros: {

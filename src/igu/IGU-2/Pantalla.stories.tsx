@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Pantalla } from "./Pantalla";
 
 const meta: Meta<typeof Pantalla> = {
-  title: "Requisitos/Gestión de Auxiliares/IGU-2 (Lista)/Pantalla",
+  title: "Requisitos/Gestión de Auxiliares/IGU-2 (Consultar)/Pantalla",
   component: Pantalla,
   tags: ["autodocs"],
 };

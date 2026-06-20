@@ -1,8 +1,18 @@
-export type RolEstado = "Activo" | "Inactivo";
+export type RoleStatus = "Active" | "Inactive";
 
-export interface Rol {
+export interface RolePermission {
+  moduleId: string;
+  moduleName: string;
+  read: boolean;
+  write: boolean;
+  delete: boolean;
+}
+
+export interface Role {
   id: number;
-  nombre: string;
-  permisos: string[];
-  estado: RolEstado;
+  name: string;
+  description: string;
+  permissions: RolePermission[];
+  isDefault: boolean;
+  status: RoleStatus;
 }

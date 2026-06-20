@@ -1,0 +1,13 @@
+import { Select } from "@/components/Select/Select";
+import { MOCK_GRADO_OPTIONS } from "@/mocks/asistencias";
+
+export function IGU_25_SELECT_1() {
+  return (
+    <Select
+      label="Grado"
+      options={MOCK_GRADO_OPTIONS}
+      value=""
+      id="igu-25-select-1"
+    />
+  );
+}

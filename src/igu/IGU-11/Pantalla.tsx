@@ -1,23 +1,13 @@
 import Container from "react-bootstrap/Container";
-import { ApoderadoForm } from "./ApoderadoForm/ApoderadoForm";
-
-const mockEstudiantes = [
-  { id: 1, nombre: "Juan Pérez" },
-  { id: 2, nombre: "Ana Ruiz" },
-  { id: 3, nombre: "Luis Gómez" },
-];
+import { IGU_11_BTN_1 } from "./IGU-11-BTN-1";
+import { IGU_11_FORM_1 } from "./IGU-11-FORM-1";
 
 export function Pantalla() {
   return (
     <Container className="py-4">
-      <h1 className="mb-4">Registrar Apoderado</h1>
-      <ApoderadoForm
-        estudiantesDisponibles={mockEstudiantes}
-        onSubmit={(data) =>
-          alert(`Apoderado Registrado:\n${JSON.stringify(data, null, 2)}`)
-        }
-        onCancel={() => alert("Registro cancelado")}
-      />
+      <IGU_11_BTN_1 />
+      <h1 className="mb-4">Detalle del Profesor</h1>
+      <IGU_11_FORM_1 />
     </Container>
   );
 }

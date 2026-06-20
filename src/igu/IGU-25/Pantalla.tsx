@@ -1,5 +1,5 @@
 import Container from "react-bootstrap/Container";
-import { ReportForm } from "./ReportForm/ReportForm";
+import { IGU_25_FORM_2 } from "./IGU-25-FORM-2";
 
 export function Pantalla() {
   return (
@@ -7,7 +7,7 @@ export function Pantalla() {
       <div className="d-flex align-items-center gap-3 mb-4">
         <h1 className="mb-0">Generador de Reportes</h1>
       </div>
-      <ReportForm />
+      <IGU_25_FORM_2 />
     </Container>
   );
 }

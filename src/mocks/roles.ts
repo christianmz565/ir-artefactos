@@ -1,56 +1,75 @@
-import type { Rol } from "@/types/rol";
+import type { Role } from "@/types/rol";
 
-export const MOCK_ROLES: Rol[] = [
+export const MOCK_ROLES: Role[] = [
   {
     id: 1,
-    nombre: "Administrador",
-    permisos: [
-      "Gestionar usuarios",
-      "Gestionar roles",
-      "Gestionar configuración",
-      "Ver reportes",
+    name: "Administrador",
+    description: "Acceso total al sistema",
+    permissions: [
+      {
+        moduleId: "M01",
+        moduleName: "Gestión de Auxiliares",
+        read: true,
+        write: true,
+        delete: true,
+      },
+      {
+        moduleId: "M02",
+        moduleName: "Gestión de Estudiantes",
+        read: true,
+        write: true,
+        delete: true,
+      },
     ],
-    estado: "Activo",
+    isDefault: true,
+    status: "Active",
   },
   {
     id: 2,
-    nombre: "Docente",
-    permisos: ["Registrar asistencia", "Ver reportes", "Enviar notificaciones"],
-    estado: "Activo",
+    name: "Docente",
+    description: "Registrar asistencia y enviar notificaciones",
+    permissions: [
+      {
+        moduleId: "M02",
+        moduleName: "Gestión de Estudiantes",
+        read: true,
+        write: true,
+        delete: false,
+      },
+    ],
+    isDefault: false,
+    status: "Active",
   },
   {
     id: 3,
-    nombre: "Auxiliar",
-    permisos: [
-      "Registrar asistencia",
-      "Ver información de estudiantes",
-      "Enviar notificaciones",
+    name: "Auxiliar",
+    description: "Registrar asistencia y consultar información",
+    permissions: [
+      {
+        moduleId: "M02",
+        moduleName: "Gestión de Estudiantes",
+        read: true,
+        write: true,
+        delete: false,
+      },
     ],
-    estado: "Activo",
+    isDefault: false,
+    status: "Active",
   },
   {
     id: 4,
-    nombre: "Apoderado",
-    permisos: [
-      "Ver información de estudiante",
-      "Ver reportes de asistencia",
-      "Recibir notificaciones",
+    name: "Apoderado",
+    description: "Consulta de información de su estudiante",
+    permissions: [
+      {
+        moduleId: "M02",
+        moduleName: "Gestión de Estudiantes",
+        read: true,
+        write: false,
+        delete: false,
+      },
     ],
-    estado: "Inactivo",
+    isDefault: false,
+    status: "Inactive",
   },
-];
-
-export const MOCK_PERMISO_OPTIONS = [
-  { value: "Gestionar usuarios", label: "Gestionar usuarios" },
-  { value: "Gestionar roles", label: "Gestionar roles" },
-  { value: "Gestionar configuración", label: "Gestionar configuración" },
-  { value: "Ver reportes", label: "Ver reportes" },
-  { value: "Registrar asistencia", label: "Registrar asistencia" },
-  { value: "Enviar notificaciones", label: "Enviar notificaciones" },
-  {
-    value: "Ver información de estudiantes",
-    label: "Ver información de estudiantes",
-  },
-  { value: "Ver reportes de asistencia", label: "Ver reportes de asistencia" },
-  { value: "Recibir notificaciones", label: "Recibir notificaciones" },
 ];

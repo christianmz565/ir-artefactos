@@ -1,6 +1,6 @@
-export type AsistenciaTipo = "Entrada" | "Salida";
+export type AsistenciaTipo = "Entry" | "Exit";
 
-export type AsistenciaEstado = "Presente" | "Tardanza" | "Falta";
+export type AsistenciaEstado = "Present" | "Late" | "Absent";
 
 export interface Asistencia {
   id: number;

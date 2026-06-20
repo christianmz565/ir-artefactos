@@ -1,28 +1,28 @@
-import type { ConfiguracionNotificacion } from "../types/notificacion";
+import type { NotificationConfig } from "../types/notificacion";
 
-export const MOCK_CONFIGURACION_NOTIFICACIONES: ConfiguracionNotificacion[] = [
+export const MOCK_NOTIFICATION_CONFIGS: NotificationConfig[] = [
   {
     id: 1,
-    tipoEvento: "Falta Injustificada",
-    plantillaMensaje:
+    eventType: "Falta Injustificada",
+    messageTemplate:
       "Estimado apoderado, le informamos que el estudiante {{nombreEstudiante}} tiene una falta injustificada el día {{fecha}}.",
-    plataforma: "WhatsApp",
-    activa: true,
+    platform: "WhatsApp",
+    active: true,
   },
   {
     id: 2,
-    tipoEvento: "Llegada Tarde",
-    plantillaMensaje:
+    eventType: "Llegada Tarde",
+    messageTemplate:
       "Le informamos que el estudiante {{nombreEstudiante}} registró su entrada a las {{horaEntrada}}.",
-    plataforma: "SMS",
-    activa: true,
+    platform: "SMS",
+    active: true,
   },
   {
     id: 3,
-    tipoEvento: "Reunión de Apoderados",
-    plantillaMensaje:
+    eventType: "Reunión de Apoderados",
+    messageTemplate:
       "Se cita a reunión general de apoderados para el día {{fecha}} a las {{hora}}.",
-    plataforma: "Email",
-    activa: false,
+    platform: "Email",
+    active: false,
   },
 ];

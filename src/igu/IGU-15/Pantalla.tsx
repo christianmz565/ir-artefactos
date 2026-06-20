@@ -1,16 +1,12 @@
 import Container from "react-bootstrap/Container";
-import { RoleForm } from "./RoleForm/RoleForm";
+import { IGU_15_NAVBAR_1 } from "./IGU-15-NAVBAR-1";
+import { IGU_15_TAB_4 } from "./IGU-15-TAB-4";
 
 export function Pantalla() {
   return (
     <Container className="py-4">
-      <h1 className="mb-4">Registrar Rol de Sistema</h1>
-      <RoleForm
-        onSubmit={(data) =>
-          alert(`Rol Registrado:\n${JSON.stringify(data, null, 2)}`)
-        }
-        onCancel={() => alert("Registro cancelado")}
-      />
+      <IGU_15_NAVBAR_1 />
+      <IGU_15_TAB_4 />
     </Container>
   );
 }

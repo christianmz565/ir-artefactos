@@ -1,16 +1,16 @@
-export type TipoDocumento = "DNI" | "CE" | "PAS";
-export type EstadoApoderado = "Activo" | "Inactivo";
+export type DocumentType = "DNI" | "CE" | "PAS";
+export type GuardianStatus = "Active" | "Inactive";
 
-export interface Apoderado {
+export interface Guardian {
   id: number;
-  nombres: string;
-  apellidos: string;
-  tipoDocumento: TipoDocumento;
-  numeroDocumento: string;
-  parentesco: string;
-  direccion: string;
-  correo: string;
-  telefono: string;
-  estado: EstadoApoderado;
-  estudiantesAsociados: number[]; // IDs of students
+  firstName: string;
+  lastName: string;
+  documentType: DocumentType;
+  documentNumber: string;
+  relationship: string;
+  address: string;
+  email: string;
+  phone: string;
+  status: GuardianStatus;
+  associatedStudents: number[];
 }

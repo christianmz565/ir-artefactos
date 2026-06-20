@@ -1,11 +1,13 @@
 import Container from "react-bootstrap/Container";
-import { EliminarNotificacionCard } from "./EliminarNotificacionCard/EliminarNotificacionCard";
+import { IGU_27_MDL_1 } from "./IGU-27-MDL-1";
 
 export function Pantalla() {
   return (
     <Container className="py-4">
       <h1 className="mb-4">Eliminar Notificación</h1>
-      <EliminarNotificacionCard />
+      <div style={{ maxWidth: "600px" }}>
+        <IGU_27_MDL_1 />
+      </div>
     </Container>
   );
 }

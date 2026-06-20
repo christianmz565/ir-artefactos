@@ -1,22 +1,13 @@
 import Container from "react-bootstrap/Container";
-import { MOCK_APODERADOS } from "@/mocks/apoderados";
-import { InactivationConfirm } from "./InactivationConfirm/InactivationConfirm";
+import { IGU_14_BTN_1 } from "./IGU-14-BTN-1";
+import { IGU_14_FORM_1 } from "./IGU-14-FORM-1";
 
 export function Pantalla() {
-  const apoderado = MOCK_APODERADOS[0];
-
   return (
     <Container className="py-4">
-      <h1 className="mb-4">Gestionar Apoderado</h1>
-      <div style={{ maxWidth: "600px" }}>
-        <InactivationConfirm
-          apoderado={apoderado}
-          onConfirm={(id) =>
-            alert(`Acción confirmada para el apoderado ID: ${id}`)
-          }
-          onCancel={() => alert("Acción cancelada")}
-        />
-      </div>
+      <IGU_14_BTN_1 />
+      <h1 className="mb-4">Detalle del Estudiante</h1>
+      <IGU_14_FORM_1 />
     </Container>
   );
 }

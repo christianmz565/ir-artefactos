@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Pantalla } from "./Pantalla";
 
 const meta: Meta<typeof Pantalla> = {
-  title: "Requisitos/Gestión de Roles/IGU-38 (Inactivación)/Pantalla",
+  title: "Requisitos/Gestión de Roles/IGU-38 (Inactivar)/Pantalla",
   component: Pantalla,
   tags: ["autodocs"],
 };

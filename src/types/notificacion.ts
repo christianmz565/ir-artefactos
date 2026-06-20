@@ -1,12 +1,22 @@
-export type NotificacionPlataforma = "WhatsApp" | "Email";
+export type NotificationPlatform = "WhatsApp" | "Email";
 
-export type NotificacionEstado = "Enviado" | "Fallido";
+export type NotificationStatus = "Sent" | "Failed";
 
-export interface Notificacion {
+export interface Notification {
   id: number;
-  fechaHora: string;
-  apoderadoDestino: string;
-  mensaje: string;
-  plataforma: NotificacionPlataforma;
-  estado: NotificacionEstado;
+  datetime: string;
+  targetGuardian: string;
+  message: string;
+  platform: NotificationPlatform;
+  status: NotificationStatus;
+}
+
+export type NotificationConfigPlatform = "WhatsApp" | "SMS" | "Email";
+
+export interface NotificationConfig {
+  id: number;
+  eventType: string;
+  messageTemplate: string;
+  platform: NotificationConfigPlatform;
+  active: boolean;
 }

@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Pantalla } from "./Pantalla";
 
 const meta: Meta<typeof Pantalla> = {
-  title: "Requisitos/Gestión de Plataformas/IGU-41 (Edición)/Pantalla",
+  title: "Requisitos/Gestión de Plataformas/IGU-41 (Editar)/Pantalla",
   component: Pantalla,
   tags: ["autodocs"],
 };
