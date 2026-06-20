@@ -1,9 +1,12 @@
-export type PlataformaEnvio = "SMS" | "WhatsApp" | "Email";
+export type NotificacionPlataforma = "WhatsApp" | "Email";
 
-export interface ConfiguracionNotificacion {
+export type NotificacionEstado = "Enviado" | "Fallido";
+
+export interface Notificacion {
   id: number;
-  tipoEvento: string;
-  plantillaMensaje: string;
-  plataforma: PlataformaEnvio;
-  activa: boolean;
+  fechaHora: string;
+  apoderadoDestino: string;
+  mensaje: string;
+  plataforma: NotificacionPlataforma;
+  estado: NotificacionEstado;
 }

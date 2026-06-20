@@ -8,7 +8,15 @@ const meta: Meta<typeof Button> = {
   argTypes: {
     variant: {
       control: { type: "select" },
-      options: ["primary", "secondary", "danger", "success", "warning", "info"],
+      options: [
+        "primary",
+        "secondary",
+        "danger",
+        "success",
+        "warning",
+        "info",
+        "link",
+      ],
     },
     size: { control: { type: "select" }, options: ["sm", "lg"] },
   },
@@ -43,4 +51,9 @@ export const Small: Story = {
 export const Disabled: Story = {
   name: "Deshabilitado",
   args: { children: "No disponible", disabled: true },
+};
+
+export const Link: Story = {
+  name: "Variante: Link",
+  args: { children: "← Regresar", variant: "link" },
 };
