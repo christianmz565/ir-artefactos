@@ -1,0 +1,6 @@
+import{i as e}from"./preload-helper-xPQekRTU.js";import{n as t,t as n}from"./SearchInput-rkL8GsP7.js";var r,i,a;e((()=>{t(),r={title:`Requisitos/Gestión de Plataformas/IGU-40 (Consulta)/SRCH-1 — Búsqueda`,component:n,tags:[`autodocs`]},i={args:{value:``,onChange:()=>{}}},i.parameters={...i.parameters,docs:{...i.parameters?.docs,source:{originalSource:`{
+  args: {
+    value: "",
+    onChange: () => {}
+  }
+}`,...i.parameters?.docs?.source}}},a=[`Default`]}))();export{i as Default,a as __namedExportsOrder,r as default};
