@@ -24,18 +24,37 @@ Local pre-push gate: `bun run lint:check && bun run typecheck && bun run build` 
 
 ```
 src/
-├── components/          # Reusable UI atoms with descriptive names
+├── components/          # Reusable UI atoms (Alert, Button, Column, Input, Select)
 │   └── <Name>/
 │       ├── <Name>.tsx
 │       └── <Name>.stories.tsx
 ├── igu/                 # Screen compositions by requirement ID
-│   └── IGU-N/
-│       ├── Pantalla.tsx          # Top-level screen component
+│   └── IGU-N/                    # One folder per IGU, NO subfolders
+│       ├── Pantalla.tsx          # IGU-N (top-level composition)
 │       ├── Pantalla.stories.tsx
-│       └── <SubComponent>/      # Screen-specific subcomponents
-├── types/               # Shared TypeScript interfaces
+│       ├── IGU-N-<PREFIX>-K.tsx  # Artefactos con ID jerárquico
+│       └── IGU-N-<PREFIX>-K.stories.tsx
+├── types/               # Shared TypeScript interfaces (attributes in English)
 └── mocks/               # Mock data for stories
 ```
+
+### IGU Artefacto Naming (Opción B — jerárquica)
+
+Cada artefacto dentro de `IGU-N/` se nombra `IGU-N-<PREFIX>-K.tsx` donde:
+
+- **PREFIX** ∈ { BTN, INP, SELECT, SRCH, LBL, FORM, TAB, COL, ALT, MDL, NAVBAR }
+- **K** = entero correlativo dentro de la IGU, en orden de aparición en el diseño
+
+**Reglas:**
+
+- Export JS usa guión bajo: `export function IGU_1_BTN_1()` (los identificadores JS no admiten guiones)
+- Sin subcarpetas dentro de `IGU-N/` — todo al mismo nivel
+- Sin cross-imports entre IGUs — cada IGU es autosuficiente
+- Atributos de tipos en **inglés** (`firstName`, `status`, `associatedStudents`)
+- UI labels en **español** (placeholders, mensajes, headers)
+- Sin lógica de eventos: solo wireframes (sin `onClick`, `onSubmit`, `useState`, `useEffect`, `alert`, `console.log`)
+- Stories con un único `Default` exportado (sin variantes con acciones)
+- **Story title con verbo en infinitivo puro**: el paréntesis después de `IGU-N` es solo el verbo, sin sustantivo pegado. Verbos permitidos: `Crear, Editar, Consultar, Registrar, Actualizar, Eliminar, Inactivar, Generar, Detalle`. Ej: `Requisitos/Gestión de Auxiliares/IGU-1 (Crear)`, nunca `(Creación)` ni `(Crear Auxiliar)`. La UI (`<h1>`, `label`, etc.) sí puede tener el sustantivo.
 
 ## Key Conventions
 

@@ -1,11 +1,11 @@
 import Container from "react-bootstrap/Container";
-import { RolForm } from "./RolForm/RolForm";
+import { IGU_37_FORM_1 } from "./IGU-37-FORM-1";
 
 export function Pantalla() {
   return (
     <Container className="py-4">
       <h1 className="mb-4">Editar Rol</h1>
-      <RolForm />
+      <IGU_37_FORM_1 />
     </Container>
   );
 }

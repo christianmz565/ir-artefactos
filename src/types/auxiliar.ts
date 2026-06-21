@@ -1,15 +1,15 @@
 export type DocumentType = "DNI" | "CE" | "PAS";
 
-export type AuxiliarEstado = "Activo" | "Inactivo";
+export type AuxiliarStatus = "Active" | "Inactive";
 
 export interface Auxiliar {
   id: number;
-  nombres: string;
-  apellidos: string;
-  tipoDocumento: DocumentType;
-  numeroDocumento: string;
-  correo: string;
-  telefono: string;
-  estado: AuxiliarEstado;
-  modulos: string[];
+  firstName: string;
+  lastName: string;
+  documentType: DocumentType;
+  documentNumber: string;
+  email: string;
+  phone: string;
+  status: AuxiliarStatus;
+  modules: string[];
 }

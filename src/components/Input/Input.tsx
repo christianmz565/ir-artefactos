@@ -6,14 +6,22 @@ interface InputProps {
   value?: string;
   onChange?: (value: string) => void;
   id?: string;
+  type?: "text" | "date";
 }
 
-export function Input({ label, placeholder, value, onChange, id }: InputProps) {
+export function Input({
+  label,
+  placeholder,
+  value,
+  onChange,
+  id,
+  type = "text",
+}: InputProps) {
   return (
     <Form.Group controlId={id}>
       {label && <Form.Label>{label}</Form.Label>}
       <Form.Control
-        type="text"
+        type={type}
         placeholder={placeholder}
         value={value}
         onChange={(e) => onChange?.(e.target.value)}
