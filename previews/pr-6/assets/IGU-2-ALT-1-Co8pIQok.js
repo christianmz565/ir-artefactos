@@ -1,0 +1,1 @@
+import{i as e}from"./preload-helper-xPQekRTU.js";import{t}from"./jsx-runtime-CaZkqeYb.js";function n(){return(0,r.jsx)(`tr`,{children:(0,r.jsx)(`td`,{colSpan:7,className:`py-4 text-center text-muted`,children:`∅ No se encontraron auxiliares`})})}var r,i=e((()=>{r=t(),n.__docgenInfo={description:``,methods:[],displayName:`IGU_2_ALT_1`}}));export{i as n,n as t};

@@ -1,0 +1,1 @@
+import{i as e}from"./preload-helper-xPQekRTU.js";import{t}from"./jsx-runtime-CaZkqeYb.js";import{n,t as r}from"./Input-Cg5HaAT0.js";function i(){return(0,a.jsx)(r,{label:`Dirección`,value:`Av. Los Pinos 123, Lima`,id:`igu-33-inp-7`})}var a,o=e((()=>{n(),a=t(),i.__docgenInfo={description:``,methods:[],displayName:`IGU_33_INP_7`}}));export{o as n,i as t};

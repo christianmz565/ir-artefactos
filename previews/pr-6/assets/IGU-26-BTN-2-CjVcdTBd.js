@@ -1,0 +1,1 @@
+import{i as e}from"./preload-helper-xPQekRTU.js";import{t}from"./jsx-runtime-CaZkqeYb.js";import{n,t as r}from"./Button-BK7JprtJ.js";function i(){return(0,a.jsx)(r,{variant:`outline-secondary`,id:`igu-26-btn-2`,children:`⚙ Configuración`})}var a,o=e((()=>{n(),a=t(),i.__docgenInfo={description:``,methods:[],displayName:`IGU_26_BTN_2`}}));export{o as n,i as t};
