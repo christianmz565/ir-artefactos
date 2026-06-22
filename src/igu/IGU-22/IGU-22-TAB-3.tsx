@@ -1,4 +1,5 @@
-import { Button } from "@/components/Button/Button";
+import { IGU_22_TAB_3_BTN_1 } from "./IGU-22-TAB-3-BTN-1";
+import { IGU_22_TAB_3_BTN_2 } from "./IGU-22-TAB-3-BTN-2";
 
 export function IGU_22_TAB_3() {
   return (
@@ -12,12 +13,8 @@ export function IGU_22_TAB_3() {
       </td>
       <td>
         <div className="d-flex gap-1">
-          <Button size="sm" variant="info" id="igu-22-tab-3-view-1">
-            Ver
-          </Button>
-          <Button size="sm" variant="danger" id="igu-22-tab-3-inact-1">
-            Inactivar
-          </Button>
+          <IGU_22_TAB_3_BTN_1 id="1" />
+          <IGU_22_TAB_3_BTN_2 id="1" />
         </div>
       </td>
     </tr>

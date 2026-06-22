@@ -1,4 +1,4 @@
-import { Button } from "@/components/Button/Button";
+import { IGU_26_TAB_3_BTN_1 } from "./IGU-26-TAB-3-BTN-1";
 
 export function IGU_26_TAB_3() {
   return (
@@ -11,9 +11,7 @@ export function IGU_26_TAB_3() {
         <span className="badge bg-success">Sent</span>
       </td>
       <td>
-        <Button size="sm" variant="danger" id="igu-26-tab-3-del-1">
-          Eliminar
-        </Button>
+        <IGU_26_TAB_3_BTN_1 id="1" />
       </td>
     </tr>
   );

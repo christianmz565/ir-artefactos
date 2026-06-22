@@ -1,5 +1,7 @@
-import { Button } from "@/components/Button/Button";
 import type { Student } from "@/types/student";
+import { IGU_7_TAB_3_BTN_1 } from "./IGU-7-TAB-3-BTN-1";
+import { IGU_7_TAB_3_BTN_2 } from "./IGU-7-TAB-3-BTN-2";
+import { IGU_7_TAB_3_BTN_3 } from "./IGU-7-TAB-3-BTN-3";
 
 export function IGU_7_TAB_3({ student }: { student: Student }) {
   return (
@@ -10,16 +12,9 @@ export function IGU_7_TAB_3({ student }: { student: Student }) {
       <td>{student.course}</td>
       <td>
         <div className="d-flex gap-1">
-          <Button size="sm" id={`igu-7-tab-3-edit-${student.id}`}>
-            Editar
-          </Button>
-          <Button
-            size="sm"
-            variant="danger"
-            id={`igu-7-tab-3-del-${student.id}`}
-          >
-            Eliminar
-          </Button>
+          <IGU_7_TAB_3_BTN_3 id={String(student.id)} />
+          <IGU_7_TAB_3_BTN_1 id={String(student.id)} />
+          <IGU_7_TAB_3_BTN_2 id={String(student.id)} />
         </div>
       </td>
     </tr>

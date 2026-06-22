@@ -1,5 +1,7 @@
-import { Button } from "@/components/Button/Button";
 import type { Auxiliar } from "@/types/auxiliar";
+import { IGU_2_TAB_3_BTN_1 } from "./IGU-2-TAB-3-BTN-1";
+import { IGU_2_TAB_3_BTN_2 } from "./IGU-2-TAB-3-BTN-2";
+import { IGU_2_TAB_3_BTN_3 } from "./IGU-2-TAB-3-BTN-3";
 
 export function IGU_2_TAB_3({ auxiliar }: { auxiliar: Auxiliar }) {
   return (
@@ -12,24 +14,12 @@ export function IGU_2_TAB_3({ auxiliar }: { auxiliar: Auxiliar }) {
       <td>{auxiliar.status}</td>
       <td>
         <div className="d-flex gap-1">
-          <Button
-            size="sm"
-            variant="info"
-            id={`igu-2-tab-3-view-${auxiliar.id}`}
-          >
-            Ver
-          </Button>
-          <Button size="sm" id={`igu-2-tab-3-edit-${auxiliar.id}`}>
-            Editar
-          </Button>
-          <Button
-            size="sm"
-            variant="danger"
-            id={`igu-2-tab-3-inact-${auxiliar.id}`}
+          <IGU_2_TAB_3_BTN_1 id={String(auxiliar.id)} />
+          <IGU_2_TAB_3_BTN_2 id={String(auxiliar.id)} />
+          <IGU_2_TAB_3_BTN_3
+            id={String(auxiliar.id)}
             disabled={auxiliar.status === "Inactive"}
-          >
-            Inactivar
-          </Button>
+          />
         </div>
       </td>
     </tr>
