@@ -1,5 +1,7 @@
-import { Button } from "@/components/Button/Button";
 import type { Guardian } from "@/types/apoderado";
+import { IGU_32_TAB_3_BTN_1 } from "./IGU-32-TAB-3-BTN-1";
+import { IGU_32_TAB_3_BTN_2 } from "./IGU-32-TAB-3-BTN-2";
+import { IGU_32_TAB_3_BTN_3 } from "./IGU-32-TAB-3-BTN-3";
 
 export function IGU_32_TAB_3({ guardian }: { guardian: Guardian }) {
   const isActive = guardian.status === "Active";
@@ -25,27 +27,9 @@ export function IGU_32_TAB_3({ guardian }: { guardian: Guardian }) {
       </td>
       <td>
         <div className="d-flex gap-2">
-          <Button
-            size="sm"
-            variant="info"
-            id={`igu-32-tab-3-view-${guardian.id}`}
-          >
-            Ver
-          </Button>
-          <Button
-            size="sm"
-            variant="primary"
-            id={`igu-32-tab-3-edit-${guardian.id}`}
-          >
-            Editar
-          </Button>
-          <Button
-            size="sm"
-            variant="danger"
-            id={`igu-32-tab-3-del-${guardian.id}`}
-          >
-            {isActive ? "Inactivar" : "Eliminar"}
-          </Button>
+          <IGU_32_TAB_3_BTN_1 id={String(guardian.id)} />
+          <IGU_32_TAB_3_BTN_2 id={String(guardian.id)} />
+          <IGU_32_TAB_3_BTN_3 id={String(guardian.id)} isActive={isActive} />
         </div>
       </td>
     </tr>

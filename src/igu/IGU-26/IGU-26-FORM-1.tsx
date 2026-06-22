@@ -1,4 +1,5 @@
 import { IGU_26_BTN_1 } from "./IGU-26-BTN-1";
+import { IGU_26_BTN_2 } from "./IGU-26-BTN-2";
 import { IGU_26_INP_1 } from "./IGU-26-INP-1";
 import { IGU_26_INP_2 } from "./IGU-26-INP-2";
 import { IGU_26_SELECT_1 } from "./IGU-26-SELECT-1";
@@ -15,7 +16,10 @@ export function IGU_26_FORM_1() {
         <IGU_26_SELECT_1 />
         <IGU_26_SELECT_2 />
       </div>
-      <IGU_26_BTN_1 />
+      <div className="d-flex gap-2">
+        <IGU_26_BTN_1 />
+        <IGU_26_BTN_2 />
+      </div>
     </div>
   );
 }
