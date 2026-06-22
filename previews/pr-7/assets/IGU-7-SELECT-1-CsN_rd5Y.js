@@ -1,0 +1,1 @@
+import{i as e}from"./preload-helper-xPQekRTU.js";import{t}from"./jsx-runtime-CaZkqeYb.js";import{n,t as r}from"./Select-Bys9rZtw.js";import{i,t as a}from"./students-DMRC92Lv.js";function o(){return(0,s.jsx)(r,{options:a,value:``,id:`igu-7-select-1`})}var s,c=e((()=>{n(),i(),s=t(),o.__docgenInfo={description:``,methods:[],displayName:`IGU_7_SELECT_1`}}));export{c as n,o as t};

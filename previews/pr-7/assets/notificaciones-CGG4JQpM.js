@@ -1,0 +1,1 @@
+import{i as e}from"./preload-helper-xPQekRTU.js";var t,n,r=e((()=>{t=[{value:`WhatsApp`,label:`WhatsApp`},{value:`Email`,label:`Email`}],n=[{value:`Sent`,label:`Enviado`},{value:`Failed`,label:`Fallido`}]}));export{t as n,r,n as t};

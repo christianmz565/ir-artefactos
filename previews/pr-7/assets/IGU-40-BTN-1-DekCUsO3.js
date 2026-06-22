@@ -1,0 +1,1 @@
+import{i as e}from"./preload-helper-xPQekRTU.js";import{t}from"./jsx-runtime-CaZkqeYb.js";import{n,t as r}from"./Button-BK7JprtJ.js";function i(){return(0,a.jsx)(r,{id:`igu-40-btn-1`,children:`+ Agregar Plataforma`})}var a,o=e((()=>{n(),a=t(),i.__docgenInfo={description:``,methods:[],displayName:`IGU_40_BTN_1`}}));export{o as n,i as t};
