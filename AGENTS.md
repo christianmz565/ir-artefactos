@@ -13,6 +13,18 @@ bun run build-storybook # Storybook static build only (no typecheck)
 
 Local pre-push gate: `bun run lint:check && bun run typecheck && bun run build` (CI does not run lint/typecheck separately).
 
+## Notion API
+
+**Env**: `NOTION_TOKEN=ntn_....` in `.env` (loaded via direnv).
+
+**Skill**: `.agents/skills/notion-api/SKILL.md` — use for all Notion interactions (CRUD on pages, databases, blocks).
+
+**Database IDs**:
+- Ilaciones master: `36aeb758-32f4-8010-952c-000bd9ec253f`
+- Ilaciones versiones: `36aeb758-32f4-80a5-b859-000b7405a6e9`
+- Artefactos master: `36deb758-32f4-8010-9270-000b251e7686`
+- Artefactos versiones: `36deb758-32f4-80cb-8f11-000b319ef480`
+
 ## Architecture
 
 - **UI component library** — no app, no routes, no server. Storybook is the only interface.
@@ -117,6 +129,7 @@ src/igu/IGU-1/Pantalla.tsx              → title: "Requisitos/.../IGU-1 (...)/P
 - GitHub Actions workflow `.github/workflows/storybook.yml` builds and deploys Storybook to GitHub Pages on push to `main`.
 - CI runs: `bun install --frozen-lockfile` → `bunx storybook build --quiet`.
 - No lint/typecheck step in CI currently — run `bun run lint:check && bun run typecheck` locally before pushing.
+- **PR Preview**: `.github/workflows/storybook-preview.yml` deploys a Storybook preview for each PR and posts a comment with the link.
 
 ## Nix Environment
 
@@ -136,3 +149,142 @@ src/igu/IGU-1/Pantalla.tsx              → title: "Requisitos/.../IGU-1 (...)/P
 1. Create `src/igu/IGU-N/Pantalla.tsx` as the top-level composition.
 2. Add subcomponents in subdirectories (e.g., `Header/`, `StudentTable/`).
 3. Story title pattern: `"Requisitos/<Category>/IGU-N (<Name>)/Pantalla"`.
+
+## PR Template
+
+Use `.github/pull_request_template.md` when creating PRs. It includes:
+- Description section
+- EDU requirements checklist
+- IGU/component details
+- Quality checklist (Storybook, Biome, typecheck)
+
+## Ilaciones (Notion Integration)
+
+### Tablas en Notion
+
+- **Tabla Maestra de Ilaciones** (`36aeb758-32f4-8010-952c-000bd9ec253f`): Registro único por ILA
+- **Versiones de Ilaciones** (`36aeb758-32f4-80a5-b859-000b7405a6e9`): Versiones individuales
+- **Tabla Maestra de Artefactos** (`36deb758-32f4-8010-9270-000b251e7686`): Artefactos de UI
+- **Versiones de Artefactos** (`36deb758-32f4-80cb-8f11-000b319ef480`): Versiones de artefactos
+
+### Versionado de Ilaciones
+
+- **Primera vez**: `00.00.01`
+- **Corrección menor**: incrementar último dígito (`00.01.00` → `00.01.01`)
+- **Cambio mayor**: incrementar centro (`00.00.xx` → `00.01.00`)
+- **NUNCA** saltar versiones (no de `00.01.00` a `00.01.04`)
+
+### Estructura de Procedimiento
+
+```
+1. El Administrador de Sistema accede al módulo de [Nombre Módulo] @IGU-N.
+2. En la [vista/grilla], hace clic en [acción] @IGU-N-[PREFIX]-K para [propósito] en @IGU-M.
+3. El sistema abre/establece una conexión a la base de datos control_asistencia_db.
+4. El sistema ejecuta una consulta SQL SELECT de lectura en la tabla Table_[Tabla].
+5. El sistema cierra/libera la conexión y despliega [componente] @IGU-M-[PREFIX]-K.
+6. El usuario completa el formulario y decide:
+   a) Hace clic en '[Botón]' @IGU-M-BTN-1: [acción positiva]
+   b) Hace clic en 'Cancelar' @IGU-M-BTN-2: [acción negativa]
+```
+
+### Reglas de Mención
+
+1. **Primera mención**: `@IGU-N` (solo el número de la IGU)
+2. **Acción**: `@IGU-N-PREFIX-K` (componente específico)
+3. **Destino**: `@IGU-M` (IGU donde ocurre la acción)
+4. **Componentes internos**: `@IGU-M-PREFIX-K` (elementos del formulario/vista)
+
+### Reglas de Artefactos Asociados
+
+- Solo incluir artefactos que aparecen en el procedimiento
+- Incluir la IGU principal y todas las mencionadas
+- No incluir artefactos no mencionados
+
+### Mapeo ILA → IGU
+
+#### Lote 1: Auxiliares (CERRADO)
+- ILA-1 → IGU-1 (Crear Auxiliar)
+- ILA-2 → IGU-2 (Consultar Auxiliares)
+- ILA-3 → IGU-3 (Editar Auxiliar)
+- ILA-4 → IGU-4 (Inactivar Auxiliar)
+- ILA-5 → IGU-5 (Ver Detalle Auxiliar)
+
+#### Lote 2: Estudiantes (CERRADO)
+- ILA-6 → IGU-6 (Crear Estudiante)
+- ILA-7 → IGU-7 (Consultar Estudiantes)
+- ILA-8 → IGU-8 (Editar Estudiante)
+- ILA-9 → IGU-13 (Inactivar Estudiante)
+- ILA-10 → IGU-14 (Ver Detalle Estudiante)
+
+#### Lote 3: Profesores (CERRADO)
+- ILA-11 → IGU-9 (Crear Profesor)
+- ILA-12 → IGU-15 (Consultar Profesores)
+- ILA-13 → IGU-11 (Ver Detalle Profesor)
+- ILA-14 → IGU-10 (Editar Profesor)
+- ILA-15 → IGU-12 (Inactivar Profesor)
+
+#### Lote 4: Asistencia (CERRADO)
+- ILA-16 → IGU-16 (Registrar Asistencia - Automático)
+- ILA-17 → IGU-17 (Crear Notificación - Automático)
+- ILA-18 → IGU-18 (Ver Detalle Notificación)
+- ILA-19 → IGU-19 (Editar Asistencia)
+- ILA-20 → IGU-20 (Eliminar Reporte)
+- ILA-43 → IGU-16 (Registro Manual - Respaldo)
+- ILA-44 → IGU-17 (Notificación Manual - Respaldo)
+
+#### Lote 5: Reportes (CERRADO)
+- ILA-21 → IGU-21 (Editar Parámetros del Reporte)
+- ILA-22 → IGU-22 (Consultar Asistencias)
+- ILA-23 → IGU-23 (Eliminar Asistencia)
+- ILA-24 → IGU-24 (Ver Detalle Reporte)
+- ILA-25 → IGU-25 (Generar Reporte)
+
+#### Lote 6: Notificaciones (CERRADO)
+- ILA-26 → IGU-26 (Consultar Historial de Notificaciones)
+- ILA-27 → IGU-27 (Eliminar Notificación)
+- ILA-28 → IGU-28 (Ver Detalle Asistencia)
+- ILA-29 → IGU-29 (Consultar Reportes)
+- ILA-30 → IGU-30 (Editar Configuración de Notificación)
+
+#### Lote 7: Apoderados (CERRADO)
+- ILA-31 → IGU-31 (Registrar Apoderado)
+- ILA-32 → IGU-32 (Consultar Apoderados)
+- ILA-33 → IGU-33 (Actualizar Apoderado)
+- ILA-34 → IGU-34 (Inactivar Apoderado)
+- ILA-35 → IGU-35 (Configurar Roles)
+
+#### Lote 8: Roles y Plataformas (CERRADO)
+- ILA-36 → IGU-36 (Consultar Roles)
+- ILA-37 → IGU-37 (Editar Rol)
+- ILA-38 → IGU-38 (Inactivar Rol)
+- ILA-39 → IGU-39 (Registrar Plataforma)
+- ILA-40 → IGU-40 (Consultar Plataformas)
+- ILA-41 → IGU-41 (Editar Plataforma)
+- ILA-42 → IGU-42 (Inactivar Plataforma)
+
+### Estructura de Grilla Estándar
+
+Las grillas (Consultar) tienen esta estructura:
+```
+IGU-N-NAVBAR-1 (barra superior)
+  ├── IGU-N-SRCH-1 (búsqueda)
+  ├── IGU-N-SELECT-1 (filtros)
+  └── IGU-N-BTN-1 (Agregar)
+IGU-N-TAB-4 (contenedor de grilla)
+  ├── IGU-N-TAB-1 (thead)
+  ├── IGU-N-TAB-2 (tbody - renderiza filas)
+  │   └── IGU-N-TAB-3 (fila)
+  │       ├── IGU-N-TAB-3-BTN-1 (Ver Detalle)
+  │       ├── IGU-N-TAB-3-BTN-2 (Editar)
+  │       └── IGU-N-TAB-3-BTN-3 (Eliminar/Inactivar)
+  └── IGU-N-ALT-1 (alerta sin resultados)
+```
+
+### Notas Importantes
+
+1. **ILA-8 es Editar Estudiante** (IGU-8), NO Inactivar
+2. **ILA-9 es Inactivar Estudiante** (IGU-13), NO Editar
+3. Los botones de grilla siempre van en orden: Ver → Editar → Eliminar
+4. El botón "Ver Detalle" es BTN-3, "Editar" es BTN-1, "Eliminar" es BTN-2
+5. Para procesos automáticos (ILA-16, ILA-17), crear ILAs de respaldo (ILA-43, ILA-44)
+6. Las ilaciones manuales deben especificar la IGU de origen en el paso 1
